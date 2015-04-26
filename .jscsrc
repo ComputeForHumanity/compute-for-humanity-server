@@ -1,0 +1,11 @@
+{
+  "preset": "crockford",
+
+  "validateQuoteMarks": "\"",
+  "validateIndentation": 2,
+  "requireMultipleVarDecl": null,
+  "disallowMultipleVarDecl": true,
+  "disallowDanglingUnderscores": null,
+
+  "excludeFiles": ["vendor/**"]
+}

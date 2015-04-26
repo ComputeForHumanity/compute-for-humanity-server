@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *default
+  database: compute_for_humanity_dev
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: compute_for_humanity_test
+
+# We do not define a configuration for our production database, because this is
+# defined by the DATABASE_URL environment variable.
