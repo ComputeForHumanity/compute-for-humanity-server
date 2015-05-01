@@ -12,6 +12,9 @@ gem "turbolinks", "~> 2.5"
 gem "uglifier", ">= 1.3.0"
 
 group :production do
+  gem "connection_pool", "~> 2.2"
+  gem "dalli", "~> 2.7"
+  gem "puma", "~> 2.11"
   gem "rails_12factor", "~> 0.0"
 end
 
