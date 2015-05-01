@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328195751) do
+ActiveRecord::Schema.define(version: 20150501114305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20150328195751) do
     t.string   "exchanged_usd_currency", default: "USD", null: false
     t.integer  "fee_usd_cents",          default: 0,     null: false
     t.string   "fee_usd_currency",       default: "USD", null: false
+    t.datetime "payout_date"
+    t.boolean  "complete",               default: false
+    t.boolean  "donated",                default: false
   end
 
 end
