@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby ENV["RUBY_VERSION"] || "2.2.0"
+
 gem "coinbase", github: "coinbase/coinbase-ruby"
 gem "memoist", "~> 0.12"
 gem "money-rails", "~> 1.4"
@@ -8,6 +10,10 @@ gem "rails", "4.2.1"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 2.5"
 gem "uglifier", ">= 1.3.0"
+
+group :production do
+  gem "rails_12factor", "~> 0.0"
+end
 
 group :development, :test do
   gem "byebug"
