@@ -1,8 +1,7 @@
 Next steps:
 
-1. Add Philanthropist task to mark Exchanges as completed (with day of cushion).
-2. Add Donate task.
-3. Write basic Litecoin miner.
-4. Obtain Litecoin address from ShapeShift.io.
-5. Run low-usage miner in background and observe earnings.
-6. Add basic web frontend.
+1. Add Donate task.
+2. Write basic Litecoin miner.
+3. Obtain Litecoin address from ShapeShift.io.
+4. Run low-usage miner in background and observe earnings.
+5. Add basic web frontend.
