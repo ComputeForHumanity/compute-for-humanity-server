@@ -11,9 +11,14 @@ end
 class Philanthropist
   extend Memoist
 
-  MINIMUM_EXCHANGE_BTC = 0.00005 # Don't trade less than this amount.
-  MINIMUM_ACCOUNT_BTC = 0.003 # Always leave at least this much in account.
-  MINIMUM_ACCOUNT_USD = 0.0 # Always leave at least this much in account.
+  # Don't trade less than this amount.
+  MINIMUM_EXCHANGE_BTC = ENV["MINIMUM_EXCHANGE_BTC"] || 0.00005
+
+  # Always leave at least this much in wallet.
+  MINIMUM_ACCOUNT_BTC = ENV["MINIMUM_ACCOUNT_BTC"] || 0.003
+
+  # Always leave at least this much in account.
+  MINIMUM_ACCOUNT_USD = ENV["MINIMUM_ACCOUNT_USD"] || 0.0
 
   def initialize(action:)
     @action = action

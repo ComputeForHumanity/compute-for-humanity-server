@@ -1,8 +1,8 @@
 Next steps:
 
-1. Make Philanthropist constants overridable with environment variables.
-2. Add Philanthropist task to mark Exchanges as completed (with day of cushion).
-3. Add Donate task.
-4. Write basic Litecoin miner.
-5. Obtain Litecoin address from ShapeShift.io.
-6. Run low-usage miner in background and observe earnings.
+1. Add Philanthropist task to mark Exchanges as completed (with day of cushion).
+2. Add Donate task.
+3. Write basic Litecoin miner.
+4. Obtain Litecoin address from ShapeShift.io.
+5. Run low-usage miner in background and observe earnings.
+6. Add basic web frontend.
