@@ -11,21 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503210431) do
+ActiveRecord::Schema.define(version: 20150505020746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "donations", force: :cascade do |t|
-    t.datetime "created_at",                             null: false
-    t.string   "transaction_id",                         null: false
-    t.string   "charity_name",                           null: false
-    t.integer  "withdrawn_usd_cents",    default: 0,     null: false
-    t.string   "withdrawn_usd_currency", default: "USD", null: false
-    t.integer  "donated_usd_cents",      default: 0,     null: false
-    t.string   "donated_usd_currency",   default: "USD", null: false
-    t.integer  "fee_usd_cents",          default: 0,     null: false
-    t.string   "fee_usd_currency",       default: "USD", null: false
+    t.datetime "created_at",                           null: false
+    t.string   "transaction_id"
+    t.string   "charity_name",                         null: false
+    t.integer  "initial_usd_cents",    default: 0,     null: false
+    t.string   "initial_usd_currency", default: "USD", null: false
+    t.integer  "donated_usd_cents",    default: 0,     null: false
+    t.string   "donated_usd_currency", default: "USD", null: false
+    t.integer  "fee_usd_cents",        default: 0,     null: false
+    t.string   "fee_usd_currency",     default: "USD", null: false
+    t.string   "status"
+  end
+
+  create_table "dwolla_secrets", force: :cascade do |t|
+    t.string "refresh_token",      null: false
+    t.string "encrypted_pin",      null: false
+    t.string "encrypted_pin_salt", null: false
+    t.string "encrypted_pin_iv",   null: false
   end
 
   create_table "exchanges", force: :cascade do |t|

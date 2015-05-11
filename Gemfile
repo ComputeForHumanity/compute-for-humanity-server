@@ -2,7 +2,9 @@ source "https://rubygems.org"
 
 ruby ENV["RUBY_VERSION"] || "2.2.0"
 
+gem "attr_encrypted", "~> 1.3"
 gem "coinbase", github: "coinbase/coinbase-ruby"
+gem "dwolla-ruby", "~> 2.6"
 gem "memoist", "~> 0.12"
 gem "money-rails", "~> 1.4"
 gem "pg", "~> 0.18"

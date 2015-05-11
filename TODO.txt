@@ -1,7 +1,36 @@
 Next steps:
 
-1. Add Donate task.
-2. Write basic Litecoin miner.
-3. Obtain Litecoin address from ShapeShift.io.
-4. Run low-usage miner in background and observe earnings.
-5. Add basic web frontend.
+1. Set up Rollbar
+1. Write basic NeoScrypt miner with:
+  - name changed to Compute for Humanity
+  - Start on launch
+  - New icon
+  - Running donation counter?
+  - Autoupdates?
+2. Add Donate task.
+  - Encrypt Dwolla PIN
+3. Add basic web frontend.
+4. Add Dwolla message to README:
+
+"this application is not directly supported by Dwolla Corp. Dwolla Corp. makes
+no claims about this application. This application is not endorsed or certified
+by Dwolla Corp"
+
+5. Open-source!
+  - Must use GNU copyleft (I think) because of minerd
+  - Add liability release disclaimer
+
+Other ideas:
+
+- Animate logo on website
+- Display # active users via Redis/heartbeats from miners
+- Put running donated total in miners
+- Become Apple Developer
+- Add Rails website
+- Produce DMG for installation
+- Add a few other charities
+- Add icons to app
+- Use temperature sensor to not run when hot
+- Use CPU data to not run when CPU is under load
+- Have miner ping server for updates
+- Rename app
