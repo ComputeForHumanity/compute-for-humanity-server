@@ -77,7 +77,8 @@ class Philanthropist
               transaction_id: transfer.transaction_id,
               initial_btc: transfer.btc,
               exchanged_usd: transfer.total,
-              fee_usd: transfer.subtotal - transfer.total
+              fee_usd: transfer.subtotal - transfer.total,
+              payout_date: transfer.payout_date
             )
           end
         # Occurs when the amount to sell is too low for Coinbase's limits.
