@@ -6,4 +6,10 @@ class Banker
 
     Money.new(exchanged_cents - donated_cents, "USD")
   end
+
+  def self.total_donated_s
+    total_cents = Donation.completed.sum(:initial_usd_cents)
+
+    "$#{Money.new(total_cents, "USD").to_s}"
+  end
 end

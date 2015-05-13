@@ -1,4 +1,54 @@
 class HomeController < ApplicationController
+  APP_VERSION = "1.0"
+  USER_HEARTBEAT_TTL = 120 # Seconds before heartbeat ping is expired.
+
+  # Set the donation value for all HTML views and the /donated route.
+  before_action :set_donation_total, except: [:version, :users, :latest]
+
+  # Set the number of active miners for use in views.
+  before_action :set_n_miners, except: [:version, :heartbeat, :latest]
+
   def home
+  end
+
+  def details
+  end
+
+  def financials
+    @donations = Donation.all
+    @exchanges = Exchange.all
+  end
+
+  def download
+  end
+
+  def heartbeat
+    uuid = params[:id]
+    if uuid
+      $redis.with do |connection|
+        connection.set("heartbeat_#{uuid}", true, ex: USER_HEARTBEAT_TTL)
+      end
+    end
+
+    render text: @total_donated, content_type: Mime::TEXT
+  end
+
+  def version
+    render text: APP_VERSION, content_type: Mime::TEXT
+  end
+
+  def users
+    render text: @n_miners, content_type: Mime::TEXT
+  end
+
+  private
+
+  # Set the @total_donated value to how much has been donated so far.
+  def set_donation_total
+    @total_donated = Banker.total_donated_s
+  end
+
+  def set_n_miners
+    @n_miners = $redis.with { |conn| conn.dbsize }
   end
 end

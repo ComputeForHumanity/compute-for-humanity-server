@@ -1,0 +1,48 @@
+<h1 class="top-margin-lg centered">All the nitty-gritty details</h1>
+<div class="description">
+  Compute for Humanity runs in the background on your computer. From time to
+  time, it runs
+  <a href="https://github.com/ghostlander/cpuminer-neoscrypt" target="_blank">some code</a>
+  to "mine" (or generate) one of several NeoScrypt-based cryptocurrencies
+  (information on NeoScrypt can be found
+  <a href="http://www.feathercoin.com/neo-scrypt-press-release.pdf" target="_blank">here</a>,
+  or you can read the
+  <a href="http://phoenixcoin.org/archive/neoscrypt_v1.pdf" target="_blank">original whitepaper</a>).
+  It only mines for a few seconds at a time, and it constantly monitors your
+  computer's temperature to make sure it's being a good citizen.
+  <p>
+    The mining uses <a href="https://www.nicehash.com/" target="_blank">NiceHash</a>, a service
+    that allows computers to mine NeoScrypt-based currencies but be paid out in
+    bitcoins. NiceHash sends the bitcoins earned to an account operated by
+    <a href="https://www.coinbase.com/" target="_blank">Coinbase</a>, a San
+    Francisco-based company that allows users to exchange bitcoins for US
+    dollars.
+  </p>
+  <p>
+    A small program runs runs each day and
+    checks to see if the Coinbase account has accumulated enough bitcoins to
+    exchange them for dollars. If so, the transaction is automatically executed
+    and the dollars are deposited in a bank account (after taking a few days to
+    process). Another small program watches the bank account, and when money is
+    deposited it automatically sends that money (using
+    <a href="https://www.dwolla.com/" target="_blank">Dwolla</a>) from the bank
+    account to a charity randomly selected from the following list:
+    <ul>
+      <%- Charity::LIST.each do |charity| %>
+        <li><a href="<%= charity.url %>" target="_blank"><%= charity.name %></a></li>
+      <%- end %>
+    </ul>
+  </p>
+  <p class="tiny-text">
+    Note: If you already mine cryptocurrencies on your own, feel free to direct
+    your miners toward 1CkZ4233SfQnMyjwypcN1YZorG15VCAPAH. Anything sent to that
+    address will be donated to charity as well. If you have no idea what that
+    means, don't worry about it!
+  </p>
+  Together, we can have a
+  <span class="highlight highlight-1">positive impact</span> on the world.
+</div>
+<div class="description top-margin-lg">
+  If you have any questions, feel free to shoot an email to
+  <a href="mailto:jacob@computeforhumanity.org">jacob@computeforhumanity.org</a>.
+</div>

@@ -18,3 +18,6 @@
 
 # Ignore OS X files.
 .DS_Store
+
+# Ignore local Redis dumps.
+dump.rdb

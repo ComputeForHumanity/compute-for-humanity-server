@@ -7,4 +7,7 @@ class Exchange < ActiveRecord::Base
            numericality: { greater_than_or_equal_to: 0 }
   monetize :exchanged_usd_cents, numericality: { greater_than_or_equal_to: 0 }
   monetize :fee_usd_cents, numericality: { greater_than_or_equal_to: 0 }
+
+  scope :completed, -> { where(complete: true) }
+  scope :pending, -> { where(complete: false) }
 end

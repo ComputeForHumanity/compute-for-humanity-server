@@ -109,7 +109,7 @@ class Philanthropist
 
     # Now, confirm donations.
     Dwolla::token = DwollaSecret.oauth_token!
-    Donation.where.not(status: "processed").each do |donation|
+    Donation.pending.each do |donation|
       Rails.logger.info "Checking donation #{donation.id} for confirmation"
       txn = Dwolla::Transactions.get(donation.transaction_id)
 
