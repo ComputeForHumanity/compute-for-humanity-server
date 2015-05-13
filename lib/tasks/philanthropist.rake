@@ -16,23 +16,23 @@ class Philanthropist
 
   # Don't sell BTC in amounts of less than this amount.
   # 500000 Satoshis = 0.005 BTC
-  MINIMUM_EXCHANGE_SATOSHIS = ENV["MINIMUM_EXCHANGE_SATOSHIS"] || 500000
+  MINIMUM_EXCHANGE_SATOSHIS = env_to_i("MINIMUM_EXCHANGE_SATOSHIS", 500000)
 
   # Always leave at least this much BTC in wallet when selling.
   # 1000000 Satoshis = 0.01 BTC
-  MINIMUM_ACCOUNT_SATOSHIS = ENV["MINIMUM_ACCOUNT_SATOSHIS"] || 1000000
+  MINIMUM_ACCOUNT_SATOSHIS = env_to_i("MINIMUM_ACCOUNT_SATOSHIS", 1000000)
 
   # The number of minutes after a sell's payout time at which we can mark the
   # sell as confirmed.
   # 4320 minutes = 3 days
-  CONFIRMATION_CUSHION_MINUTES = ENV["CONFIRMATION_CUSHION_MINUTES"] || 4320
+  CONFIRMATION_CUSHION_MINUTES = env_to_i("CONFIRMATION_CUSHION_MINUTES", 4320)
 
   # Always leave at least this much USD in account when donating.
   # 100 cents = $1.00
-  MINIMUM_ACCOUNT_CENTS = ENV["MINIMUM_ACCOUNT_CENTS"] || 100
+  MINIMUM_ACCOUNT_CENTS = env_to_i("MINIMUM_ACCOUNT_CENTS", 100)
 
   # Don't donate more than $10 at a time, to avoid Dwolla's transaction fees.
-  MAXIMUM_DONATION_CENTS = ENV["MAXIMUM_DONATION_CENTS"] || 1000
+  MAXIMUM_DONATION_CENTS = env_to_i("MAXIMUM_DONATION_CENTS", 1000)
 
   # Initializes the Philanthropist and executes the given action.
   # @param action [Symbol] the action to take
@@ -206,5 +206,13 @@ class Philanthropist
     else
       yield
     end
+  end
+
+  # Casts an environment variable to an int, using a fallback if not set.
+  # @param name [String] the name of the environment variable
+  # @param default [Integer] the fallback value to use if env var isn't set
+  # @return [Integer] the integer value of the env var, or default if not set
+  def env_to_i(name, default)
+    ENV[name] ? ENV[name].to_i : default
   end
 end
