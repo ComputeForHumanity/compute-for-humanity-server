@@ -11,9 +11,17 @@ h1 {
 }
 
 .inline-logo {
+  background-color: #fff;
   display: inline-block;
   vertical-align: middle;
   width: 16px;
+}
+
+.installed-screenshot {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 60px;
 }
 
 .top-margin {
@@ -33,7 +41,7 @@ h1 {
   align-items: center;
 
   color: #000;
-  background-color: #ddd;
+  background-color: #AEE9FF; //#91E19F; //#CDE7B6; //#FFE7AB; //#B5C1FF; //#ffd6ab; //#AEE9FF; //#6c7;
   border-bottom-right-radius: 25px;
   padding: 10px 20px;
   position: absolute;
@@ -59,7 +67,7 @@ h1 {
 }
 
 .right-corner {
-  background-color: #ddd;
+  background-color: #AEE9FF;
   border-bottom-left-radius: 25px;
   padding: 10px 20px;
   position: absolute;
