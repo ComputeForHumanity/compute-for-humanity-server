@@ -2,6 +2,10 @@ body {
   height: auto;
 }
 
+h1 {
+  font-size: 30px;
+}
+
 .top-margin-lg {
   margin-top: 40px;
 }
@@ -29,7 +33,7 @@ body {
   align-items: center;
 
   color: #000;
-  background-color: #7FDBFF;
+  background-color: #ddd;
   border-bottom-right-radius: 25px;
   padding: 10px 20px;
   position: absolute;
@@ -47,15 +51,15 @@ body {
 }
 
 .left-corner:hover {
-  color: #fff;
+  color: #777;
 }
 
 .left-corner:hover > .logo {
-  background-image: image-url("h-animated@128.gif");
+  background-image: image-url("h-animated-3@128.gif");
 }
 
 .right-corner {
-  background-color: #7fdbff;
+  background-color: #ddd;
   border-bottom-left-radius: 25px;
   padding: 10px 20px;
   position: absolute;
@@ -76,8 +80,9 @@ body {
 .description {
   background-color: #ddd;
   border-radius: 25px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
 }
 
@@ -109,11 +114,11 @@ body {
 }
 
 .highlight-3 {
-  background-color: #0074d9;
+  background-color: #b10dc9;
 }
 
 // Used to preload hover icon.
 body:after{
   display: none;
-  content: image-url("h-animated@128.gif");
+  content: image-url("h-animated-3@128.gif");
 }
