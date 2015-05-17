@@ -14,6 +14,14 @@ end
 class Philanthropist
   extend Memoist
 
+  # Casts an environment variable to an int, using a fallback if not set.
+  # @param name [String] the name of the environment variable
+  # @param default [Integer] the fallback value to use if env var isn't set
+  # @return [Integer] the integer value of the env var, or default if not set
+  def self.env_to_i(name, default)
+    ENV[name] ? ENV[name].to_i : default
+  end
+
   # Don't sell BTC in amounts of less than this amount.
   # 500000 Satoshis = 0.005 BTC
   MINIMUM_EXCHANGE_SATOSHIS = env_to_i("MINIMUM_EXCHANGE_SATOSHIS", 500000)
@@ -206,13 +214,5 @@ class Philanthropist
     else
       yield
     end
-  end
-
-  # Casts an environment variable to an int, using a fallback if not set.
-  # @param name [String] the name of the environment variable
-  # @param default [Integer] the fallback value to use if env var isn't set
-  # @return [Integer] the integer value of the env var, or default if not set
-  def env_to_i(name, default)
-    ENV[name] ? ENV[name].to_i : default
   end
 end
