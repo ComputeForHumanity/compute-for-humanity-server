@@ -40,7 +40,7 @@ body {
 
 .logo {
   display: inline-block;
-  background-image: url(h-static@128.gif);
+  background-image: image-url("h-static@128.gif");
   background-size: cover;
   height: 64px;
   width: 48px;
@@ -51,7 +51,7 @@ body {
 }
 
 .left-corner:hover > .logo {
-  background-image: url(h-animated@128.gif);
+  background-image: image-url("h-animated@128.gif");
 }
 
 .right-corner {
@@ -110,4 +110,10 @@ body {
 
 .highlight-3 {
   background-color: #0074d9;
+}
+
+// Used to preload hover icon.
+body:after{
+  display: none;
+content: image-url("h-animated@128.gif");
 }
