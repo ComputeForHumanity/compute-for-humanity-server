@@ -1,66 +1,84 @@
-<h1 class="top-margin-lg centered underlined">Financial details</h1>
-<div class="description">
-  <table>
-    <thead class="success">
-      <tr>
-        <th>Date</th>
-        <th>Amount Donated</th>
-        <th>Charity</th>
-        <th>Transaction Fee</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%- @donations.each do |donation| %>
-        <tr>
-          <td><%= donation.created_at.strftime("%b %-d, %Y") %></td>
-          <td>$<%= donation.donated_usd.to_s %></td>
-          <td><%= donation.charity_name %></td>
-          <td>$<%= donation.fee_usd.to_s %></td>
-          <td><%= donation.status.capitalize %></td>
-        </tr>
-      <%- end %>
-    </tbody>
-  </table>
-  <p>
-    Donations are made with money received in exchange for bitcoins (see
-    exchange history below).
-  </p>
+<div class="row top-margin">
+  <div class="title fifth">
+    <h1>Donations</h1>
+  </div>
+  <div class="description-container">
+    <div class="description">
+      <table>
+        <thead class="success">
+          <tr>
+            <th>Date</th>
+            <th>Amount Donated</th>
+            <th>Charity</th>
+            <th>Transaction Fee</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- @donations.each do |donation| %>
+            <tr>
+              <td><%= donation.created_at.strftime("%b %-d, %Y") %></td>
+              <td>$<%= donation.donated_usd.to_s %></td>
+              <td><%= donation.charity_name %></td>
+              <td>$<%= donation.fee_usd.to_s %></td>
+              <td><%= donation.status.capitalize %></td>
+            </tr>
+          <%- end %>
+        </tbody>
+      </table>
+      <p>
+        Donations are made with money received in exchange for bitcoins (see
+        exchange history below).
+      </p>
+    </div>
+  </div>
 </div>
-<div class="description top-margin-lg">
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Bitcoins Traded</th>
-        <th>Dollars Received</th>
-        <th>Transaction Fee</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%- @exchanges.each do |exchange| %>
-        <tr>
-          <td><%= exchange.created_at.strftime("%b %-d, %Y") %></td>
-          <td><%= exchange.initial_btc.to_s %> BTC</td>
-          <td>$<%= exchange.exchanged_usd.to_s %></td>
-          <td>$<%= exchange.fee_usd.to_s %></td>
-          <td><%= exchange.complete ? "Complete" : "Pending" %></td>
-        </tr>
-      <%- end %>
-    </tbody>
-  </table>
-  <p>
-    Exchanges are made with bitcoins paid out by
-    <a href="https://www.nicehash.com/" target="_blank">NiceHash</a>
-    from work done by the Compute for Humanity program. See the recent payout
-    history and unpaid balance
-    <a href="https://www.nicehash.com/index.jsp?p=miners&a=8&addr=12CbZWfSB5TESmFwiYs4WJRZtJyi9hBPNz" target="_blank">here</a>.
-  </p>
+<div class="row top-margin-lg">
+  <div class="title fifth">
+    <h1>Exchanges</h1>
+  </div>
+  <div class="description-container">
+    <div class="description">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Bitcoins Traded</th>
+            <th>Dollars Received</th>
+            <th>Transaction Fee</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- @exchanges.each do |exchange| %>
+            <tr>
+              <td><%= exchange.created_at.strftime("%b %-d, %Y") %></td>
+              <td><%= exchange.initial_btc.to_s %> BTC</td>
+              <td>$<%= exchange.exchanged_usd.to_s %></td>
+              <td>$<%= exchange.fee_usd.to_s %></td>
+              <td><%= exchange.complete ? "Complete" : "Pending" %></td>
+            </tr>
+          <%- end %>
+        </tbody>
+      </table>
+      <p>
+        Exchanges are made with bitcoins paid out by
+        <a href="https://www.nicehash.com/" target="_blank">NiceHash</a>
+        from work done by the Compute for Humanity program. See the recent payout
+        history and unpaid balance
+        <a href="https://www.nicehash.com/index.jsp?p=miners&a=8&addr=12CbZWfSB5TESmFwiYs4WJRZtJyi9hBPNz" target="_blank">here</a>.
+      </p>
+    </div>
+  </div>
 </div>
-<div class="description top-margin-lg">
-  Note: <span class="underlined">All</span> development and server costs are
-  paid <span class="highlight highlight-2">out-of-pocket</span> by this
-  project's creator. Money earned by your computer goes straight to charity,
-  where it belongs.
+<div class="row top-margin-lg">
+  <div class="title fifth"></div>
+  <div class="description-container">
+    <div class="description">
+      Note: <span class="underlined">All</span> development and server costs are
+      paid <span class="highlight highlight-2">out-of-pocket</span> by this
+      project's creator. Money earned by your computer goes straight to charity,
+      where it belongs.
+    </div>
+  </div>
 </div>

@@ -3,25 +3,34 @@
 <head>
   <title>Compute for Humanity</title>
   <%= stylesheet_link_tag "http://www.picnicss.com/nut/picnic_3_4.min.css", media: "all" %>
+  <%= stylesheet_link_tag "http://www.picnicss.com/nut/raw+modal_2.min.css", media: "all" %>
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <link rel="icon" type="image/png" href="./favicon.png" />
 </head>
 <body>
 
-<a href="/">
-  <div class="left-corner">
-    Compute for
-    <div class="logo"></div>umanity
+<div class="row">
+  <div class="two-fourth left-corner-container">
+    <div class="left-corner">
+      <div class="large-text centered"><%= @total_donated %></div>
+      <div class="top-margin-tiny centered">raised for charity (so far!)</div>
+      <div class="user-count-container">
+        <span id="user-count"><%= @n_miners %></span>
+        <span id="user-count-units">computer<%= "s" unless @n_miners == 1 %></span>
+        helping right now
+      </div>
+    </div>
   </div>
-</a>
-<div class="right-corner">
-  <span class="large-text"><%= @total_donated %></span> donated to charity (so far!)
   <div>
-    <span id="user-count" class="medium-text"><%= @n_miners %></span>
-    <span id="user-count-units">computer<%= "s" unless @n_miners == 1 %></span>
-    helping right now
+    <a href="/">
+      <div class="logo-container">
+        Compute for
+        <div class="logo"></div>umanity
+      </div>
+    </a>
   </div>
+  <div class="fourth"></div>
 </div>
 <%= yield %>
 

@@ -36,8 +36,8 @@ class Philanthropist
   CONFIRMATION_CUSHION_MINUTES = env_to_i("CONFIRMATION_CUSHION_MINUTES", 4320)
 
   # Always leave at least this much USD in account when donating.
-  # 100 cents = $1.00
-  MINIMUM_ACCOUNT_CENTS = env_to_i("MINIMUM_ACCOUNT_CENTS", 100)
+  # 0 cents = $0.00
+  MINIMUM_ACCOUNT_CENTS = env_to_i("MINIMUM_ACCOUNT_CENTS", 0)
 
   # Don't donate more than $10 at a time, to avoid Dwolla's transaction fees.
   MAXIMUM_DONATION_CENTS = env_to_i("MAXIMUM_DONATION_CENTS", 1000)

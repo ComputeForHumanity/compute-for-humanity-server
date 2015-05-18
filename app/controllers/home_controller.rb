@@ -15,8 +15,8 @@ class HomeController < ApplicationController
   end
 
   def financials
-    @donations = Donation.all
-    @exchanges = Exchange.all
+    @donations = Donation.order(created_at: :desc)
+    @exchanges = Exchange.order(created_at: :desc)
   end
 
   def download
