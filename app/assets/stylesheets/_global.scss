@@ -11,6 +11,15 @@ table {
   margin-right: auto;
 }
 
+tbody {
+  height: 80px;
+  overflow-y: auto;
+}
+
+thead > tr, tbody {
+  display: block;
+}
+
 .row {
   width: 100%;
 }
