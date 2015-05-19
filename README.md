@@ -9,6 +9,7 @@ Learn more at [www.computeforhumanity.org](http://www.computeforhumanity.org).
 This repository includes both a Rails server and several rake tasks to run the automated transaction and donation processes.
 
 The schedule of rake tasks is:
+
 - 14:00 UTC (daily): `rake philanthropist:donate`
 - 14:30 UTC (daily): `rake philanthropist:confirm`
 - 15:00 UTC (daily): `rake philanthropist:exchange`
