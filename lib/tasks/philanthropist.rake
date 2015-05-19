@@ -135,7 +135,8 @@ class Philanthropist
     sources = Dwolla::FundingSources.get
     source_id = sources.find { |src| src["ProcessingType"] == "ACH" }["Id"]
 
-    possible_donation = Banker.available_for_donation
+    possible_donation = Banker.available_for_donation -
+                        Money.new(MINIMUM_ACCOUNT_CENTS, "USD")
     maximum_donation = Money.new(MAXIMUM_DONATION_CENTS, "USD")
     amount_to_donate = [possible_donation, maximum_donation].min
 

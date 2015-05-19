@@ -22,9 +22,9 @@ class Charity < Struct.new(:name, :dwolla_id, :url)
       url: "https://watsi.org/"
     ),
     Charity.new(
-      name: "Carbon Offsets To Alleviate Poverty",
-      dwolla_id: "812-711-3865",
-      url: "http://cotap.org/"
+      name: "GlobalGiving",
+      dwolla_id: "812-662-0426",
+      url: "http://www.globalgiving.org/"
     ),
     Charity.new(
       name: "Pencils of Promise",
