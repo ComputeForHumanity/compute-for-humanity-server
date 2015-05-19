@@ -21,7 +21,7 @@
               <td>$<%= donation.donated_usd.to_s %></td>
               <td><%= donation.charity_name %></td>
               <td>$<%= donation.fee_usd.to_s %></td>
-              <td><%= donation.status.capitalize %></td>
+              <td><%= donation.status.try(:capitalize) || "Pending" %></td>
             </tr>
           <%- end %>
         </tbody>
