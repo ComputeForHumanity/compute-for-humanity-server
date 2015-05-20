@@ -15,6 +15,86 @@ table {
   width: 100%;
 }
 
+$table_body_height: 74px;
+
+.donation-table {
+  $donation_table_column1_width: 160px;
+  $donation_table_column2_width: 195px;
+  $donation_table_column3_width: 150px;
+  $donation_table_column4_width: 187px;
+  $donation_table_column5_width: 118px;
+  width: $donation_table_column1_width +
+         $donation_table_column2_width +
+         $donation_table_column3_width +
+         $donation_table_column4_width +
+         $donation_table_column5_width;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  td:nth-child(1), th:nth-child(1) { min-width: $donation_table_column1_width; }
+  td:nth-child(2), th:nth-child(2) { min-width: $donation_table_column2_width; }
+  td:nth-child(3), th:nth-child(3) { min-width: $donation_table_column3_width; }
+  td:nth-child(4), th:nth-child(4) { min-width: $donation_table_column4_width; }
+  td:nth-child(5), th:nth-child(5) { width: $donation_table_column5_width; }
+
+  thead {
+    tr {
+      display: block;
+      position: relative;
+    }
+  }
+  tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    max-height: $table_body_height;
+  }
+}
+
+.exchange-table {
+  $exchange_table_column1_width: 154px;
+  $exchange_table_column2_width: 186px;
+  $exchange_table_column3_width: 195px;
+  $exchange_table_column4_width: 187px;
+  $exchange_table_column5_width: 129px;
+  width: $exchange_table_column1_width +
+         $exchange_table_column2_width +
+         $exchange_table_column3_width +
+         $exchange_table_column4_width +
+         $exchange_table_column5_width;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  td:nth-child(1), th:nth-child(1) { min-width: $exchange_table_column1_width; }
+  td:nth-child(2), th:nth-child(2) { min-width: $exchange_table_column2_width; }
+  td:nth-child(3), th:nth-child(3) { min-width: $exchange_table_column3_width; }
+  td:nth-child(4), th:nth-child(4) { min-width: $exchange_table_column4_width; }
+  td:nth-child(5), th:nth-child(5) { width: $exchange_table_column5_width; }
+
+  thead {
+    tr {
+      display: block;
+      position: relative;
+    }
+  }
+  tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    max-height: $table_body_height;
+  }
+}
+
 .top-margin-lg {
   margin-top: 30px;
 }
