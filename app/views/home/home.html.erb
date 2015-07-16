@@ -12,7 +12,7 @@
       <p>
         It works by occasionally doing little bits of math to generate small amounts
         of cryptocurrencies (like
-        <a href="https://www.coinbase.com/what-is-bitcoin" target="_blank" class="underlined">Bitcoin</a>),
+        <a href="https://www.coinbase.com/what-is-bitcoin" target="_blank">Bitcoin</a>),
         which are then exchanged for US dollars and donated to good causes.
       </p>
       <p>
@@ -41,131 +41,13 @@
         </li>
         <li class="top-margin-lg">
           All code (including the code for this website!) is open source.
-          <label for="code-modal" class="dull button home-button">
-            See the code
-          </label>
+          <a href="https://github.com/ComputeForHumanity" target="_blank" class="button home-button">See the code</a>
         </li>
       </ol>
-      <div class="tiny-text top-margin-lg">* Except for transaction fees, which we keep to an
-      <span class="underlined">absolute</span>
-      <span class="underlined">minimum</span>.</div>
+      <div class="tiny-text top-margin-lg">* Except for transaction fees, which
+        we jump through hoops to keep to an
+        <span class="underlined">absolute</span>
+        <span class="underlined">minimum</span>.</div>
     </div>
   </div>
 </div>
-
-<div class="modal">
-  <input id="code-modal" type="checkbox" />
-  <label for="code-modal" class="overlay"></label>
-  <article>
-    <header>
-      <h3>Sorry...</h3>
-      <label for="code-modal" class="close">&times;</label>
-    </header>
-    <section class="content">
-      Source code will be released after BitHack winners have been announced,
-      since this project is non-public until then. If you're a BitHack judge, I
-      included instructions for accessing the source code in my submission
-      overview.
-    </section>
-    <footer>
-      <label for="code-modal" class="button home-button">Got it</label>
-    </footer>
-  </article>
-</div>
-
-<div class="modal">
-  <input id="bithack-modal" type="checkbox" />
-  <label for="bithack-modal" class="overlay"></label>
-  <article>
-    <header>
-      <h3>A note to BitHack judges</h3>
-      <label for="bithack-modal" class="close">&times;</label>
-    </header>
-    <section class="content">
-      <p>
-        Hi there! Thanks for taking the time to look at my BitHack submission!
-      </p>
-      <p>
-        Since this site is designed for a general audience, I thought it might be
-        helpful to explain this project from a BitHack-oriented perspective. My
-        goals are:
-      </p>
-      <ol>
-        <strong><li>
-          Introduce cryptocurrencies to the general public.
-        </li></strong>
-        <p>
-          This app gets people participating in the world of cryptocurrencies
-          without needing to know what a "hot wallet" or "address" is. Even if
-          they don't fully understand what's going on behind the scenes, this
-          app will expose people to Bitcoin in an approachable way.
-          <span class="underlined">It gets the conversation started.</span>
-        </p>
-        <strong>
-          <li>Change Bitcoin's reputation.</li>
-        </strong>
-        <p>
-          Too often I talk to people who equate Bitcoin with the Silk Road. The
-          best way to fix that misconception is by using Bitcoin for an
-          <span class="underlined">unequivocally good cause!</span>
-        </p>
-        <strong>
-          <li>
-            Change the Bitcoin community's perception of mining.
-          </li>
-        </strong>
-        <p>
-          To mine cryptocurrencies, you need to spend thousands of dollars on
-          hardware, you need a large and dirt-cheap electricity supply, you
-          need to be cutthroat about making a profit, and you certainly need to
-          do it on Windows or Linux. Except... what if
-          <span class="underlined">none of those were true</span>?
-        </p>
-        <strong>
-          <li>
-            Have a <span class="underlined">positive impact on the world!</span>
-          </li>
-        </strong>
-      </ol>
-    </section>
-    <footer>
-      <label for="bithack-modal" class="button home-button">Rock on!</label>
-    </footer>
-  </article>
-</div>
-
-<script type="text/javascript">
-  setTimeout(function() {
-    // Cookie code modified from http://www.quirksmode.org/js/cookies.html
-    var createCookie = function(name, value, days) {
-      var expires = "";
-
-    	if (days) {
-    		var date = new Date();
-    		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    		expires = "; expires=" + date.toGMTString();
-    	}
-    	document.cookie = name + "=" + value + expires + "; path=/";
-    };
-
-    var readCookie = function(name) {
-    	var nameEQ = name + "=";
-    	var ca = document.cookie.split(";");
-    	for(var i = 0; i < ca.length; i++) {
-    		var c = ca[i];
-    		while (c.charAt(0) === " ") {
-          c = c.substring(1, c.length);
-        }
-    		if (c.indexOf(nameEQ) == 0) {
-          return c.substring(nameEQ.length, c.length);
-        }
-    	}
-    	return null;
-    };
-
-    if (!readCookie("bithack")) {
-      document.getElementById("bithack-modal").checked = true;
-      createCookie("bithack", "true", 7);
-    }
-  }, 1000);
-</script>
