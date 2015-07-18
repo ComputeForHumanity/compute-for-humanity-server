@@ -23,10 +23,10 @@ end
 
 group :development, :test do
   # Overcommit and friends.
-  gem "brakeman"
-  gem "overcommit"
-  gem "rubocop"
-  gem "scss_lint"
+  gem "brakeman", require: false
+  gem "overcommit", require: false
+  gem "rubocop", require: false
+  gem "scss_lint", require: false
 
   # Dev dependencies.
   gem "byebug"

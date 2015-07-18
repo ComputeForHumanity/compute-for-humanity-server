@@ -82,3 +82,13 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    setTimeout(function() {
+      var $tables = $("tbody");
+
+      $tables.scrollTop(999999999);
+      $tables.animate({ scrollTop: 0 }, 1000);
+    }, 1000);
+  });
+</script>

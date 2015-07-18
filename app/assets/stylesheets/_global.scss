@@ -19,10 +19,10 @@ table {
 $table_body_height: 74px;
 
 .donation-table {
-  $donation_table_column1_width: 160px;
-  $donation_table_column2_width: 195px;
-  $donation_table_column3_width: 150px;
-  $donation_table_column4_width: 187px;
+  $donation_table_column1_width: 150px;
+  $donation_table_column2_width: 175px;
+  $donation_table_column3_width: 200px;
+  $donation_table_column4_width: 177px;
   $donation_table_column5_width: 118px;
   width: $donation_table_column1_width +
          $donation_table_column2_width +
