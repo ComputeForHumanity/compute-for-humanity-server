@@ -192,10 +192,11 @@ $table_body_height: 74px;
   position: absolute;
   right: 10px;
   top: 10px;
+  visibility: hidden; // To be removed via JavaScript.
 
   .fb-like {
-    position: relative;
-    top: -8px;
+    position: absolute;
+    right: 115px;
     overflow: hidden !important;
   }
 }
