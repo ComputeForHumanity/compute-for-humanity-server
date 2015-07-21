@@ -188,6 +188,18 @@ $table_body_height: 74px;
   width: 50%;
 }
 
+.social-div {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  .fb-like {
+    position: relative;
+    top: -8px;
+    overflow: hidden !important;
+  }
+}
+
 .underlined {
   text-decoration: underline;
 }
