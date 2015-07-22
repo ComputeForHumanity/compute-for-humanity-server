@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  APP_VERSION = "1.1"
+  APP_VERSION = "1.2"
   USER_HEARTBEAT_TTL = 120 # Seconds before heartbeat ping is expired.
 
   # Set the donation value for all HTML views and the /donated route.
@@ -49,6 +49,6 @@ class HomeController < ApplicationController
   end
 
   def set_n_miners
-    @n_miners = $redis.with { |conn| conn.dbsize }
+    @n_miners = $redis.with(&:dbsize)
   end
 end
