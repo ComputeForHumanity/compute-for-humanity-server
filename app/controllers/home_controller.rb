@@ -55,6 +55,8 @@ class HomeController < ApplicationController
 
   def release_notes
     @version = params[:version]
+
+    render "release_notes", layout: nil
   end
 
   private
