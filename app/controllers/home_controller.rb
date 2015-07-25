@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  APP_VERSION = "1.2"
+  APP_VERSION = "1.3"
   USER_HEARTBEAT_TTL = 120 # Seconds before heartbeat ping is expired.
 
   # Set the donation value for all HTML views and the /donated route.
