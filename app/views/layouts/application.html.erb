@@ -8,6 +8,7 @@
   <meta property="og:image" content="<%= image_url('h-static-social.png') %>" />
   <title>Compute for Humanity</title>
   <%= stylesheet_link_tag "//cdn.jsdelivr.net/picnicss/4.1.1/picnic.min.css", media: "all" %>
+  <%= stylesheet_link_tag "//cdn.jsdelivr.net/picnicss/4.1.1/plugins.min.css", media: "all" %>
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js" %>
   <%= javascript_include_tag "application" %>
@@ -22,28 +23,18 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-  <div class="row">
-    <div class="two-fourth left-corner-container">
-      <div class="left-corner">
-        <div class="large-text centered"><%= @total_donated %></div>
-        <div class="top-margin-tiny centered">raised for charity (so far!)</div>
-        <div class="user-count-container">
-          <span id="user-count"><%= @n_miners %></span>
-          <span id="user-count-units">computer<%= "s" unless @n_miners == 1 %></span>
-          helping right now
-        </div>
-      </div>
+  <nav class="header">
+    <a class="brand" href="/">
+      <span class="logo-container">
+        Compute for
+        <div class="logo"></div>umanity
+      </span>
+    </a>
+    <div class="counter-container">
+      <div><span class="large-text"><%= @total_donated %></span> raised for charity (so far!)</div>
+      <div class="user-counter"><%= @n_miners %> computer<%= "s" unless @n_miners == 1 %> helping right now</div>
     </div>
-    <div>
-      <a href="/">
-        <div class="logo-container">
-          Compute for
-          <div class="logo"></div>umanity
-        </div>
-      </a>
-    </div>
-    <div class="fourth"></div>
-  </div>
+  </nav>
   <%= yield %>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55add1e036d68332" async="async"></script>
   <script>
