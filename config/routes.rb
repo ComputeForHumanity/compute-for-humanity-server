@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "/heartbeat" => "home#heartbeat"
   get "unheartbeat" => "home#unheartbeat"
   get "/version" => "home#version"
+  get "release-notes/:version" => "home#release_notes"
 end

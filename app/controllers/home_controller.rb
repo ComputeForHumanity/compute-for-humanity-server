@@ -53,6 +53,10 @@ class HomeController < ApplicationController
     render text: @n_miners, content_type: Mime::TEXT
   end
 
+  def release_notes
+    @version = params[:version]
+  end
+
   private
 
   # @return [String] the Redis key for storing the heartbeat ping
