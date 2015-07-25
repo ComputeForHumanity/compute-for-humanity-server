@@ -15,8 +15,6 @@ PreCommit:
     enabled: true
   RuboCop:
     enabled: true
-  RubyLint:
-    enabled: true
   ScssLint:
     enabled: true
   TrailingWhitespace:

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "/download" => "home#download"
   get "/users" => "home#users"
   get "/heartbeat" => "home#heartbeat"
+  get "unheartbeat" => "home#unheartbeat"
   get "/version" => "home#version"
 end
