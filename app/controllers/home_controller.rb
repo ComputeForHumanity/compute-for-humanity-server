@@ -2,11 +2,13 @@ class HomeController < ApplicationController
   APP_VERSION = "1.4"
   USER_HEARTBEAT_TTL = 120 # Seconds before heartbeat ping is expired.
 
-  # Set the donation value for all HTML views and the /donated route.
-  before_action :set_donation_total, except: [:version, :users, :latest]
+  # Set the donation value for all HTML views.
+  before_action :set_donation_total,
+                only: [:home, :details, :financials, :download]
 
   # Set the number of active miners for use in views.
-  before_action :set_n_miners, except: [:version, :heartbeat, :latest]
+  before_action :set_n_miners,
+                only: [:home, :details, :financials, :download, :users]
 
   def home
   end
