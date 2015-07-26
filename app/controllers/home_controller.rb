@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   # Set the donation value for all HTML views.
   before_action :set_donation_total,
-                only: [:home, :details, :financials, :download]
+                only: [:home, :details, :financials, :download, :heartbeat]
 
   # Set the number of active miners for use in views.
   before_action :set_n_miners,
