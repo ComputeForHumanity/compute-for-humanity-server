@@ -1,5 +1,10 @@
-<% if @version == "1.4" %>
+<% case @version %>
+<% when "1.4" %>
   This version adds an in-app updater, so updates are much easier for you! No
   more downloading the new version yourself... now you can get updates right
   inside the app like magic!
+<% when "1.5" %>
+  This version fixes a bug that was causing the app to crash on computers
+  running OS X 10.10.0, 10.10.1, and 10.10.2. Huge thanks go to Alex Pritz for
+  helping to track down the issue!
 <% end %>

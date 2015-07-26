@@ -7,13 +7,22 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.5</title>
+      <sparkle:releaseNotesLink>
+          http://computeforhumanity.org/release-notes?version=1.5
+      </sparkle:releaseNotesLink>
+      <pubDate>Sun, 26 Jul 2015</pubDate>
+      <enclosure url="http://computeforhumanity.org/Compute%20for%20Humanity.zip"
+        sparkle:version="1.5" length="2592796" type="application/octet-stream" />
+      <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
+    </item>
+
+    <item>
       <title>Version 1.4</title>
       <sparkle:releaseNotesLink>
           http://computeforhumanity.org/release-notes?version=1.4
       </sparkle:releaseNotesLink>
       <pubDate>Sat, 25 Jul 2015</pubDate>
-      <enclosure url="http://computeforhumanity.org/Compute%20for%20Humanity.zip"
-        sparkle:version="1.4" length="2592583" type="application/octet-stream" />
       <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
     </item>
   </channel>
