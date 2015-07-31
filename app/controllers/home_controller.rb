@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
-  APP_VERSION = "1.5"
-  USER_HEARTBEAT_TTL = 120 # Seconds before heartbeat ping is expired.
+  APP_VERSION = "1.7"
+
+  # Seconds before heartbeat ping is expired. This is double the frequency with
+  # which clients should roughly be sending heartbeats, to account for any
+  # connectivity issues.
+  USER_HEARTBEAT_TTL = 360
 
   # Set the donation value for all HTML views.
   before_action :set_donation_total,
