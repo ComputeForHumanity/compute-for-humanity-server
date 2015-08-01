@@ -9,10 +9,11 @@
       <span class="underlined">any noticeable impact</span> on your
       computer</strong>. It achieves this by:
       <ol class="pretty-list small">
-        <li>Running in the background on your computer, "mining" (or generating)
-          <a href="http://phoenixcoin.org/archive/neoscrypt_v1.pdf" target="_blank">NeoScrypt</a>-based
-          cryptocurrencies, which is <span class="underlined">much</span> more
-          efficient than bitcoin mining.</li>
+        <li>Running in the background on your computer,
+          "<a><label for="mining-modal">mining</label></a>" (or generating)
+          NeoScrypt-based
+          cryptocurrencies (which is <span class="underlined">much</span> more
+          efficient than Bitcoin mining).</li>
         <li>Mining only for <span class="underlined">a few seconds</span> every few minutes, and telling the
           operating system to prioritize it below everything else.</li>
         <li>Monitoring your computer's temperature to make sure it's
@@ -38,9 +39,11 @@
   </div>
   <div class="description-container">
     <div class="description">
-      The mining uses <a href="https://www.nicehash.com/" target="_blank">NiceHash</a>, a service
-      that allows computers to mine NeoScrypt-based currencies in exchange for
-      bitcoins. NiceHash sends the bitcoins earned to an account operated by
+      The mining uses
+      <a href="https://www.nicehash.com/" target="_blank">NiceHash</a>, a
+      service that allows computers to mine NeoScrypt-based currencies in
+      exchange for bitcoins. NiceHash sends the bitcoins earned to an account
+      operated by
       <a href="https://www.coinbase.com/" target="_blank">Coinbase</a>, a San
       Francisco-based company that allows users to exchange bitcoins for US
       dollars.
@@ -79,4 +82,34 @@
       <a href="mailto:jacob@computeforhumanity.org">jacob@computeforhumanity.org</a>.
     </div>
   </div>
+</div>
+
+<div class="modal">
+  <input id="mining-modal" type="checkbox" />
+  <label for="mining-modal" class="overlay"></label>
+  <article>
+    <header>
+      <h3>What the heck is "mining"?</h3>
+      <label for="mining-modal" class="close">&times;</label>
+    </header>
+    <section class="content">
+      <p>
+        Cryptocurrencies are digital currencies (Bitcoin is one of them) with no
+        central government behind them. Because of this, there's no central mint
+        either—instead, coins are created by a process called
+        <strong>mining</strong>.
+      </p>
+      <p class="top-margin-tiny">
+        Computers mine by doing little bits of math that help to process
+        transactions. This keeps the currency usable! In exchange for doing this
+        work, the computers are rewarded with a small amount of new currency,
+        adding new coins to the system. It's one big happy cycle!
+      </p>
+    </section>
+    <footer>
+      <label for="mining-modal" class="button modal-button">
+        Got it!
+      </label>
+    </footer>
+  </article>
 </div>
