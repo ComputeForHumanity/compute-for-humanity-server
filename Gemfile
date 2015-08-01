@@ -30,6 +30,7 @@ group :development, :test do
 
   # Dev dependencies.
   gem "byebug"
+  gem "rack-mini-profiler"
   gem "spring"
   gem "web-console", "~> 2.0"
 end
