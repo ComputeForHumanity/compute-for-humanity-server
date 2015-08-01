@@ -1,3 +1,5 @@
+$green: #2ecc40;
+
 body {
   height: auto;
 }
@@ -222,34 +224,47 @@ $table_body_height: 74px;
   font-size: 30px;
 }
 
-.homepage-list {
+.pretty-list {
   position: relative;
   list-style-type: none;
   counter-reset: ol-counter;
-}
 
-.homepage-list > li:before {
-  content: counter(ol-counter);
-  counter-increment: ol-counter;
+  li {
+    position: relative;
+    margin-left: 20px;
 
-  border: 3px solid #2ecc40; //#c5c5c5;
-  border-radius: 50%;
-  background-color: #eee;
+    &:before {
+      content: counter(ol-counter);
+      counter-increment: ol-counter;
 
-  position: absolute;
-  top: -12px;
-  left: -60px;
-  width: 45px;
-  height: 45px;
-  font-size: 30px;
-  line-height: 45px;
-  text-align: center;
-  color: #000;
-}
+      border-radius: 50%;
+      background-color: #eee;
 
-.homepage-list > li {
-  position: relative;
-  margin-left: 20px;
+      position: absolute;
+      text-align: center;
+      color: #000;
+    }
+  }
+
+  &.large > li:before {
+    border: 3px solid $green;
+    top: -12px;
+    left: -60px;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    line-height: 45px;
+  }
+
+  &.small > li:before {
+    border: 2px solid $green;
+    top: -3px;
+    left: -40px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .large-text {
@@ -259,21 +274,10 @@ $table_body_height: 74px;
 }
 
 .highlight {
+  background-color: $green;
   border-radius: 8px;
   color: #fff;
   padding: 3px;
-}
-
-.highlight-1 {
-  background-color: #2ecc40;
-}
-
-.highlight-2 {
-  background-color: #2ecc40; //#ff851b;
-}
-
-.highlight-3 {
-  background-color: #2ecc40; //#b10dc9;
 }
 
 // Used to preload hover icon.

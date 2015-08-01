@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/download" => "home#download"
   get "/users" => "home#users"
   get "/heartbeat" => "home#heartbeat"
-  get "unheartbeat" => "home#unheartbeat"
+  get "/unheartbeat" => "home#unheartbeat"
   get "/version" => "home#version"
-  get "release-notes" => "home#release_notes"
+  get "/release-notes" => "home#release_notes"
 end
