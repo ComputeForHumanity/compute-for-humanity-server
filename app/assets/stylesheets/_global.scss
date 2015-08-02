@@ -184,6 +184,7 @@ $table_body_height: 74px;
   display: inline-block;
   background-image: image-url("h-static@128.gif");
   background-size: cover;
+  font-size: 0; // Hide text, since logo is there. Allows screen readers though.
   height: 48px !important; // Override Picnic styles.
   margin-right: 0 !important; // Override Picnic styles.
   width: 36px;
