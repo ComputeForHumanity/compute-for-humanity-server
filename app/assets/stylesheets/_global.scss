@@ -193,11 +193,26 @@ $table_body_height: 74px;
 .counter-container {
   float: right;
 
+  .large-text {
+    color: #FF851B;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    right: 2px;
+    top: 2px;
+  }
+
   .user-counter {
-    float: right;
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
     top: -5px;
+  }
+
+  .call-to-action {
+    font-size: 17px;
+    position: relative;
+    text-align: center;
+    top: -7px;
   }
 }
 
@@ -270,12 +285,6 @@ $table_body_height: 74px;
     font-size: 18px;
     line-height: 28px;
   }
-}
-
-.large-text {
-  font-size: 28px;
-  color: #FF851B;
-  font-weight: bold;
 }
 
 .highlight {
