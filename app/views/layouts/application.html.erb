@@ -36,7 +36,9 @@
         <span id="user-count-units">computer<%= "s" unless @n_miners == 1 %></span>
         helping right now
       </div>
-      <div class="call-to-action">Help us get to 100!</div>
+      <div class="call-to-action">Help us get to
+        <%= (@n_miners / 100 + 1) * 100 %>!
+      </div>
     </div>
   </nav>
   <%= yield %>
