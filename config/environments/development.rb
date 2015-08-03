@@ -41,4 +41,10 @@ Rails.application.configure do
 
   # Use a different logger for development.
   config.logger = Logger.new(STDOUT)
+
+  # Load Redis in development using same code as in production.
+  redis_connections_per_process = Integer(ENV["REDIS_CONNS_PER_PROCESS"] || 5)
+  $redis = ConnectionPool.new(size: redis_connections_per_process) do
+    Redis.new(url: ENV["REDIS_URL"] || "redis://localhost:6379/0")
+  end
 end

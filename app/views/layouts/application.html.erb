@@ -31,9 +31,12 @@
       </span>
     </a>
     <div class="counter-container">
-      <div><span class="large-text"><%= @total_donated %></span> raised for charity (so far!)</div>
-      <div class="user-counter"><span id="user-count"><%= @n_miners %></span> <span id="user-count-units">computer<%= "s" unless @n_miners == 1 %></span>
-        helping right now</div>
+      <div class="user-counter">
+        <span id="user-count" class="large-text"><%= @n_miners %></span>
+        <span id="user-count-units">computer<%= "s" unless @n_miners == 1 %></span>
+        helping right now
+      </div>
+      <div class="call-to-action">Help us get to 100!</div>
     </div>
   </nav>
   <%= yield %>
