@@ -70,6 +70,19 @@ class HomeController < ApplicationController
     render "release_notes", layout: nil
   end
 
+  #####
+
+  def test
+    uuid = SecureRandom.uuid
+    `mkdir tmp/#{uuid}`
+    `cp public/Compute\ for\ Humanity.app tmp/#{uuid}`
+    `attr -s C4HReferralCode -V #{uuid} tmp/#{uuid}/Compute\ for\ Humanity.app`
+    `zip tmp/#{uuid}/Compute\ for\ Humanity.zip tmp/#{uuid}/Compute\ for\ Humanity.app`
+    send_file `tmp/#{uuid}/Compute\ for\ Humanity.zip`
+    `rm -rf tmp/#{uuid}`
+    puts "Checkpoint!"
+  end
+
   private
 
   # @return [String] the Redis key for storing the heartbeat ping

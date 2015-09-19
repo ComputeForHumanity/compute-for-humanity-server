@@ -92,8 +92,6 @@ GEM
       rake-compiler
     fastercsv (1.5.5)
     ffi (1.9.10)
-    ffi-xattr (0.1.2)
-      ffi
     flamegraph (0.1.0)
       fast_stack
     globalid (0.3.5)
@@ -252,7 +250,6 @@ DEPENDENCIES
   coinbase!
   connection_pool (~> 2.2)
   dwolla-ruby (~> 2.6)
-  ffi-xattr
   flamegraph
   memoist (~> 0.12)
   money-rails (~> 1.4)

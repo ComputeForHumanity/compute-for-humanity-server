@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get "/unheartbeat" => "home#unheartbeat"
   get "/version" => "home#version"
   get "/release-notes" => "home#release_notes"
+
+  get "/test" => "home#test"
 end
