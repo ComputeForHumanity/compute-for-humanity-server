@@ -78,7 +78,9 @@ class HomeController < ApplicationController
     `cp -r "public/Compute for Humanity.app" tmp/#{uuid}`
     `attr -q -s C4HReferralCode -V #{uuid} "tmp/#{uuid}/Compute for Humanity.app"`
     `zip -q -r "tmp/#{uuid}/Compute for Humanity.zip" "tmp/#{uuid}/Compute for Humanity.app"`
-    send_data File.open("tmp/#{uuid}/Compute for Humanity.zip", "r")
+    data = ""
+    File.open("tmp/#{uuid}/Compute for Humanity.zip", "r") { |d| data << d }
+    send_data data
     `rm -rf tmp/#{uuid}`
     puts "Checkpoint!"
   end
