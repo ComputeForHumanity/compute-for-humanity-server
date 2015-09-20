@@ -83,7 +83,7 @@ class HomeController < ApplicationController
     # `zip -q -r "tmp/#{uuid}/Compute for Humanity.zip" "tmp/#{uuid}/test.txt"`
     # `touch -t 200805101024 "tmp/#{uuid}/Compute for Humanity.app"`
     # `zip -q -r "tmp/#{uuid}/Compute for Humanity.zip" "tmp/#{uuid}/Compute for Humanity.app"`
-    zip -q -r "tmp/Compute for Humanity.zip" "tmp/Compute for Humanity.app"
+    `zip -q -r "tmp/Compute for Humanity.zip" "tmp/Compute for Humanity.app"`
     send_data File.read("public/Compute for Humanity.zip"), filename: "Compute for Humanity.zip"
     # `rm -rf tmp/#{uuid}`
     puts "Checkpoint!"
