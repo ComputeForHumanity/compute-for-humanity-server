@@ -75,9 +75,12 @@ class HomeController < ApplicationController
   def test
     uuid = SecureRandom.uuid
     `mkdir tmp/#{uuid}`
-    `cp -r "public/Compute for Humanity.app" tmp/#{uuid}`
-    `attr -q -s C4HReferralCode -V #{uuid} "tmp/#{uuid}/Compute for Humanity.app"`
-    `zip -q -r "tmp/#{uuid}/Compute for Humanity.zip" "tmp/#{uuid}/Compute for Humanity.app"`
+    `touch tmp/#{uuid}/test.txt`
+    # `cp -r "public/Compute for Humanity.app" tmp/#{uuid}`
+    `attr -q -s C4HReferralCode -V #{uuid} "tmp/#{uuid}/test.txt"`
+    # `attr -q -s C4HReferralCode -V #{uuid} "tmp/#{uuid}/Compute for Humanity.app"`
+    `zip -q -r "tmp/#{uuid}/Compute for Humanity.zip" "tmp/#{uuid}/test.txt"`
+    # `zip -q -r "tmp/#{uuid}/Compute for Humanity.zip" "tmp/#{uuid}/Compute for Humanity.app"`
     send_data File.read("tmp/#{uuid}/Compute for Humanity.zip")
     `rm -rf tmp/#{uuid}`
     puts "Checkpoint!"
