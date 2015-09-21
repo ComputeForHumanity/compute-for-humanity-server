@@ -2,12 +2,34 @@
 <html>
   <head>
     <title>Compute for Humanity</title>
-    <link href="http://www.picnicss.com/nut/picnic_3_4.min.css" media="all" rel="stylesheet" />
-    <link href="http://www.picnicss.com/nut/raw+modal_2.min.css" media="all" rel="stylesheet" />
+    <link href="//cdn.jsdelivr.net/picnicss/4.1.1/picnic.min.css" media="all" rel="stylesheet" />
+    <link href="//cdn.jsdelivr.net/picnicss/4.1.1/plugins.min.css" media="all" rel="stylesheet" />
     <link rel="icon" type="image/png" href="./favicon.ico" />
     <style>
+      .header {
+        height: 70px;
+      }
+
+      .brand {
+       box-shadow: none !important; // Override Picnic styles.
+      }
+
+      .brand:active {
+        background: none !important; // Override Picnic styles.
+        outline: none !important; // Override Picnic styles.
+      }
+
+      .logo-container {
+        color: #000;
+        font-size: 20px;
+      }
+
+      .logo-container:hover {
+        color: #777;
+      }
+
       .top-margin {
-        margin-top: 20px;
+        margin-top: 100px;
       }
 
       .title {
@@ -29,14 +51,21 @@
     </style>
   </head>
   <body>
+    <nav class="header">
+      <a class="brand" href="/">
+        <span class="logo-container">
+          Compute for Humanity
+        </span>
+      </a>
+    </nav>
     <div class="row top-margin">
       <div class="title fifth">
         <h1>Whoops!</h1>
       </div>
       <div class="description-container">
         <div class="description">
-          Looks like something went wrong! Why don't you
-          <a href="/">head on home</a>?
+          <p>Looks like something went wrong!</p>
+          <p>Why don't you <a href="/">head on home</a>?</p>
         </div>
       </div>
     </div>
