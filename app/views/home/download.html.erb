@@ -4,22 +4,30 @@
   </div>
   <div class="description-container">
     <div class="description">
-      <h3 class="underlined">Step 1</h3>
-      <a href="Compute for Humanity.zip" class="button success">Download for OS X Yosemite</a>
-      <span class="tiny-text">
-        <br>
-        Other platforms not yet supported. By downloading you agree to use this app entirely at your own risk.
-      </span>
-      <h3 class="underlined">Step 2</h3>
-      Drag the Compute for Humanity app from the Downloads folder to the
-      Applications folder.
-      <h3 class="underlined">Step 3</h3>
-      Open Compute for Humanity.
-      <%= image_tag "installed-screenshot-3.png", class: "installed-screenshot" %>
-      You should see the Compute for Humanity logo
-      ( <%= image_tag "h-static@128.gif", class: "inline-logo" %> )
-      in the menu bar at the top of your screen.
-      <p>
+      <ol class="pretty-list large">
+        <li>
+          <a href="Compute for Humanity.zip" class="button success download-button">Download for OS X</a>
+          <span class="tiny-text">
+            <br>
+            Other platforms not yet supported. By downloading you agree to use this app entirely at your own risk.
+          </span>
+        </li>
+        <li class="top-margin-lg">
+          Open the Compute for Humanity app.
+          <%= image_tag "install-opening-screenshot.png", class: "screenshot installing-screenshot-1" %>
+        </li>
+        <li class="top-margin-lg">
+          Click the button in the popup to move it to your Applications folder.
+          <%= image_tag "install-moving-screenshot.png", class: "screenshot installing-screenshot-2" %>
+        </li>
+        <li class="top-margin-lg">
+          You should see the Compute for Humanity logo
+          ( <%= image_tag "h-static@128.gif", class: "inline-logo" %> )
+          in the menu bar at the top of your screen.
+          <%= image_tag "installed-screenshot.png", class: "screenshot installed-screenshot" %>
+        </li>
+      </ol>
+      <p class="top-margin-lg">
         <span class="highlight">That's it!</span> Pat yourself on the
         back, friend. You're now computing for humanity! Now go tell all your
         friends how cool you are!

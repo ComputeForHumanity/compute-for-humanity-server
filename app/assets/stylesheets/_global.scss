@@ -129,12 +129,27 @@ $table_body_height: 74px;
   width: 16px;
 }
 
-.installed-screenshot {
+.download-button {
+  font-size: 26px;
+  margin-top: -15px;
+}
+
+.screenshot {
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 700px;
+  margin: 10px 0;
   max-width: 100%;
+}
+
+.installing-screenshot-1 {
+  width: 400px;
+}
+
+.installing-screenshot-2 {
+  width: 550px;
+}
+
+.installed-screenshot {
+  width: 700px;
 }
 
 .title {
@@ -251,7 +266,6 @@ $table_body_height: 74px;
 
   li {
     position: relative;
-    margin-left: 20px;
 
     &:before {
       content: counter(ol-counter);
@@ -266,24 +280,32 @@ $table_body_height: 74px;
     }
   }
 
-  &.large > li:before {
-    border: 3px solid $green;
-    top: -12px;
-    left: -60px;
-    width: 45px;
-    height: 45px;
-    font-size: 30px;
-    line-height: 45px;
+  &.large > li {
+    margin-left: 40px;
+
+    &:before {
+      border: 3px solid $green;
+      font-size: 30px;
+      height: 45px;
+      left: -70px;
+      line-height: 45px;
+      top: -12px;
+      width: 45px;
+    }
   }
 
-  &.small > li:before {
-    border: 2px solid $green;
-    top: -3px;
-    left: -40px;
-    width: 28px;
-    height: 28px;
-    font-size: 18px;
-    line-height: 28px;
+  &.small > li {
+    margin-left: 20px;
+
+    &:before {
+      border: 2px solid $green;
+      font-size: 18px;
+      height: 28px;
+      left: -40px;
+      line-height: 28px;
+      top: -3px;
+      width: 28px;
+    }
   }
 }
 

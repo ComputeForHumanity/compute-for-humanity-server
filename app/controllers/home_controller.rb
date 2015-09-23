@@ -122,6 +122,6 @@ class HomeController < ApplicationController
   end
 
   def set_n_miners
-    @n_miners = $redis.with(&:dbsize)
+    @n_miners = $redis.with(&:dbsize) - 1 # Subtract one for payout value.
   end
 end
