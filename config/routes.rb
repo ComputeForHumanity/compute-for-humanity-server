@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get "/unheartbeat" => "home#unheartbeat"
   get "/version" => "home#version"
   get "/release-notes" => "home#release_notes"
+  post "/nicehash-update" => "home#nicehash_update"
+  get "/payout-percentage" => "home#payout_percentage"
 end

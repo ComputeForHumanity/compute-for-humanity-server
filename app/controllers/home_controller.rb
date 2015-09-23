@@ -6,6 +6,8 @@ class HomeController < ApplicationController
   # connectivity issues.
   USER_HEARTBEAT_TTL = 360
 
+  PAYOUT_PERCENTAGE_KEY = "nicehash_payout_percentage"
+
   # Set the donation value for all HTML views.
   before_action :set_donation_total,
                 only: [:home, :details, :financials, :download, :heartbeat]
@@ -13,6 +15,8 @@ class HomeController < ApplicationController
   # Set the number of active miners for use in views.
   before_action :set_n_miners,
                 only: [:home, :details, :financials, :download, :users]
+
+  skip_before_action :verify_authenticity_token, :nicehash_update
 
   def home
   end
@@ -70,7 +74,42 @@ class HomeController < ApplicationController
     render "release_notes", layout: nil
   end
 
+  # Store the percentage of the way we are toward a payout.
+  def nicehash_update
+    $redis.with do |connection|
+      connection.set(
+        PAYOUT_PERCENTAGE_KEY,
+        Banker.payout_completion_percentage(
+          unpaid_balance: nicehash_unpaid_balance
+        )
+      )
+    end
+
+    head :ok
+  end
+
+  # Renders the percentage of the way we are toward a payout.
+  def payout_percentage
+    render text: $redis.with { |conn| conn.get(PAYOUT_PERCENTAGE_KEY) },
+           content_type: Mime::TEXT
+  end
+
   private
+
+  # Enforce params from the NiceHash update webhook being formatted correctly.
+  # @return [Money] the unpaid balance from the request
+  def nicehash_unpaid_balance
+    unpaid_balance_s = params.
+                       require(:results).
+                       permit("standaloneData" => ["unpaidBalanceBTC"]).
+                       require("standaloneData").
+                       first["unpaidBalanceBTC"]
+
+    match = unpaid_balance_s.match /\A\d\.(\d{8})\z/
+    raise "Bad input" unless match
+
+    Money.new(match[1], "BTC")
+  end
 
   # @return [String] the Redis key for storing the heartbeat ping
   def heartbeat_key(uuid)
