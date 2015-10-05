@@ -42,25 +42,26 @@
       <a href="https://www.nicehash.com/" target="_blank">NiceHash</a>, a
       service that allows computers to mine NeoScrypt-based currencies in
       exchange for bitcoins. NiceHash sends the bitcoins earned to an account
-      operated by
-      <a href="https://www.coinbase.com/" target="_blank">Coinbase</a>, a San
-      Francisco-based company that allows users to exchange bitcoins for US
-      dollars.
+      where they are exchanged for dollars (with
+      <span class="underlined">zero</span> transaction fees, using
+      <a href="https://www.circle.com/" target="_blank">Circle</a>), depositing
+      the money in a bank account (after a few days of transaction processing).
       <p>
-        A small program runs each day and
-        checks to see if the Coinbase account has accumulated enough bitcoins to
-        exchange them for dollars. If so, the transaction is automatically executed
-        and the dollars are deposited in a bank account (after taking a few days to
-        process). Another small program watches the bank account, and when money is
-        deposited it automatically sends that money (with
+        A small program watches the bank account, and when money is deposited
+        it automatically sends that money (with
         <span class="underlined">zero</span> transaction fees, using
-        <a href="https://www.dwolla.com/" target="_blank">Dwolla</a>) from
-        the bank account to a charity randomly selected from the following list:
+        <a href="https://www.dwolla.com/" target="_blank">Dwolla</a>)
+        to a charity randomly selected from the following list:
         <ul>
           <%- Charity::LIST.each do |charity| %>
             <li><a href="<%= charity.url %>" target="_blank"><%= charity.name %></a></li>
           <%- end %>
         </ul>
+      </p>
+      <p>
+        These charities were chosen primarily because they use Dwolla, but plans
+        to both support more charities and allow you to choose which charities
+        your computer supports are in the works!
       </p>
       <p class="tiny-text">
         Note: If you already mine cryptocurrencies on your own, feel free to direct
