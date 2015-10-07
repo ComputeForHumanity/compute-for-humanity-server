@@ -17,6 +17,11 @@ class Charity < Struct.new(:name, :dwolla_id, :url)
   # selected at random from this list.
   LIST = [
     Charity.new(
+      name: "GiveDirectly",
+      dwolla_id: "812-935-3775",
+      url: "https://givedirectly.org"
+    ),
+    Charity.new(
       name: "Watsi",
       dwolla_id: "812-809-5836",
       url: "https://watsi.org/"
