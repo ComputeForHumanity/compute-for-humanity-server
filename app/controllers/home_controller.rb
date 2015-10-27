@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  APP_VERSION = "1.12"
+  APP_VERSION = "1.13"
 
   # Seconds before heartbeat ping is expired. This is double the frequency with
   # which clients should roughly be sending heartbeats, to account for any

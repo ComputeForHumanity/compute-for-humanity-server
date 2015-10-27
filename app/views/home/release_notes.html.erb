@@ -1,4 +1,17 @@
 <% case @version %>
+<% when "1.13" %>
+  This version:<br>
+  <ul>
+    <li>Fixes several small bugs related to how the menu and icon were displayed
+      when the app pauses its work because the computer is warm.</li>
+    <li>Updates some internals to the app's naming conventions to make it
+      more easily identifiable in Activity Monitor and less likely to be
+      mistakenly flagged by anti-malware scanners.</li>
+    <li>By request from several users, adds an experimental "Use more CPU" mode,
+      which allows users to perform more mining if desired. This mode is
+      disabled by default and, when enabled, may be disabled again at any time.
+    </li>
+  </ul>
 <% when "1.12" %>
   This version fixes a minor issue that prevented updates and donation status
   retrievals from appearing in OS X 10.11 El Capitan. A big hat tip to David
