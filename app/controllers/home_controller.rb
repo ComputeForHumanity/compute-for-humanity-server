@@ -9,8 +9,7 @@ class HomeController < ApplicationController
   PAYOUT_PERCENTAGE_KEY = "nicehash_payout_percentage"
 
   # Set the donation value for all HTML views.
-  before_action :set_donation_total,
-                only: [:home, :details, :financials, :download, :heartbeat]
+  before_action :set_donation_total, only: [:heartbeat]
 
   # Set the number of active miners for use in views.
   before_action :set_n_miners,
