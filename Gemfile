@@ -3,7 +3,6 @@ source "https://rubygems.org"
 ruby ENV["RUBY_VERSION"] || "2.2.0"
 
 gem "attr_encrypted", "~> 1.3"
-gem "coinbase", github: "coinbase/coinbase-ruby", ref: "23f44e6"
 gem "connection_pool", "~> 2.2"
 gem "dwolla-ruby", "~> 2.6"
 gem "memoist", "~> 0.12"
