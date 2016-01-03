@@ -14,7 +14,6 @@ The schedule of rake tasks is:
 
 - 14:00 UTC (daily): `rake philanthropist:donate`
 - 14:30 UTC (daily): `rake philanthropist:confirm`
-- 15:00 UTC (daily): `rake philanthropist:exchange`
 
 The order of these tasks is the opposite in which value moves through the
 system. While this lengthens the process of donating, it allows for more time to

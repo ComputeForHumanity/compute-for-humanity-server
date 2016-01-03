@@ -1,10 +1,7 @@
 #! /usr/bin/env ruby
 
 namespace :philanthropist do
-  desc "Exchange BTC for USD via Coinbase."
-  task(exchange: :environment) { Philanthropist.new(action: :exchange) }
-
-  desc "Confirm that exchange completed successfully."
+  desc "Confirm that donation completed successfully."
   task(confirm: :environment) { Philanthropist.new(action: :confirm) }
 
   desc "Donate USD to charity."
@@ -48,7 +45,7 @@ class Philanthropist
   def initialize(action:)
     @action = action
 
-    if [:exchange, :confirm, :donate].include? action
+    if [:confirm, :donate].include? action
       send("#{action}!")
     else
       raise "Invalid action #{action}!"
@@ -57,72 +54,15 @@ class Philanthropist
 
   private
 
-  # Exchange BTC in the Coinbase account for USD, which is automatically sent to
-  # the associated banking account.
-  def exchange!
-    balance = coinbase.balance
-
-    minimum_account_btc = Money.new(MINIMUM_ACCOUNT_SATOSHIS, "BTC")
-    minimum_exchange_btc = Money.new(MINIMUM_EXCHANGE_SATOSHIS, "BTC")
-
-    # Don't try to exchange if we don't have enough BTC.
-    if balance > minimum_account_btc + minimum_exchange_btc
-      amount_to_trade_str = (balance - minimum_account_btc).to_s
-      Rails.logger.info "Exchanging #{amount_to_trade_str} BTC for USD"
-
-      # coinbase.sell! immediately decrements BTC balance, and money is sent
-      # directly to the bank account.
-      safe do
-        begin
-          sell_info = coinbase.sell!(amount_to_trade_str)
-
-          # If the transaction was successful, record it in the database.
-          if sell_info.success
-            transfer = sell_info.transfer
-
-            Exchange.create!(
-              created_at: transfer.created_at,
-              transaction_id: transfer.transaction_id,
-              initial_btc: transfer.btc,
-              exchanged_usd: transfer.total,
-              fee_usd: transfer.subtotal - transfer.total,
-              payout_date: transfer.payout_date
-            )
-          end
-        # Occurs when the amount to sell is too low for Coinbase's limits.
-        rescue Coinbase::Client::Error => e
-          Rails.logger.info "ERROR: #{e.message}"
-        end
-      end
-    end
-  end
-
-  # Confirm both exchanges and donations, so we can mark them in our database as
-  # being fully processed.
+  # Confirm donations so we can mark them in our database as fully processed.
   def confirm!
-    # First, confirm exchanges.
-    Exchange.
-      where(complete: false).
-      where("payout_date < ?", Time.now - CONFIRMATION_CUSHION_MINUTES.minutes).
-      each do |exchange|
-
-      Rails.logger.info "Checking exchange #{exchange.id} for confirmation"
-      txn = coinbase.transaction(exchange.transaction_id)
-
-      if txn.transaction.status == "complete"
-        Rails.logger.info "Confirming exchange #{exchange.id}"
-        safe { exchange.update!(complete: true) }
-      end
-    end
-
-    # Now, confirm donations.
     Dwolla::token = DwollaSecret.oauth_token!
     Donation.pending.each do |donation|
       Rails.logger.info "Checking donation #{donation.id} for confirmation"
       txn = Dwolla::Transactions.get(donation.transaction_id)
 
       if txn["Status"] != donation.status
-        Rails.logger.info "Updating donation #{donation.id}: #{txn["Status"]}"
+        Rails.logger.info "Updating donation #{donation.id}: #{txn['Status']}"
         safe { donation.update!(status: txn["Status"]) }
       end
     end
@@ -141,7 +81,7 @@ class Philanthropist
     amount_to_donate = [possible_donation, maximum_donation].min
 
     if amount_to_donate > Money.new(1, "USD")
-      Rails.logger.info "Donating $#{amount_to_donate.to_s} to #{charity.name}"
+      Rails.logger.info "Donating $#{amount_to_donate} to #{charity.name}"
 
       safe do
         # We save the donation to the database before making the API call for it
@@ -190,15 +130,6 @@ class Philanthropist
     Charity::LIST[SecureRandom.random_number(Charity::LIST.size)]
   end
   memoize :charity
-
-  # @return [Coinbase::Client] a Coinbase client for API usage
-  def coinbase
-    Coinbase::Client.new(
-      ENV["COINBASE_API_KEY"],
-      ENV["COINBASE_API_SECRET"]
-    )
-  end
-  memoize :coinbase
 
   # Expects a block to be passed, and only yields to that block if both of the
   # following are true:
