@@ -12,7 +12,7 @@
           http://computeforhumanity.org/release-notes?version=1.15
       </sparkle:releaseNotesLink>
       <pubDate>Tue, 27 Oct 2015</pubDate>
-      <enclosure url="http://computeforhumanity.org/Compute%20for%20Humanity.zip"
+      <enclosure url="http://computeforhumanity.org/_download"
         sparkle:version="1.15" length="2897814" type="application/octet-stream" />
       <sparkle:minimumSystemVersion>10.10.3</sparkle:minimumSystemVersion>
     </item>

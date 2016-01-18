@@ -33,12 +33,12 @@
 </head>
 <body>
   <nav class="header">
-    <a class="brand" href="/">
+    <%= link_to :root, class: "brand" do %>
       <span class="logo-container">
         Compute for
         <div class="logo">H</div>umanity
       </span>
-    </a>
+    <% end %>
     <div class="counter-container">
       <div class="user-counter">
         <span id="user-count" class="large-text"><%= @n_miners %></span>

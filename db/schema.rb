@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505020746) do
+ActiveRecord::Schema.define(version: 20160118182614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,5 +48,12 @@ ActiveRecord::Schema.define(version: 20150505020746) do
     t.datetime "payout_date",                            null: false
     t.boolean  "complete",               default: false, null: false
   end
+
+  create_table "recruits", id: false, force: :cascade do |t|
+    t.string  "uuid",                   null: false
+    t.integer "n_recruits", default: 0
+  end
+
+  add_index "recruits", ["uuid"], name: "index_recruits_on_uuid", unique: true, using: :btree
 
 end

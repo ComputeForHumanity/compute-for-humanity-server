@@ -4,7 +4,7 @@
   var updateUsers = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
-      var userCountUnits
+      var userCountUnits;
 
       if (request.readyState === 4 && (request.status == 200 || request.status == 304)) {
         if (request.response === "1") {
@@ -16,7 +16,7 @@
         document.getElementById("user-count-units").textContent = userCountUnits;
       }
     };
-    request.open("GET", "./users");
+    request.open("GET", "./api/v1/users");
     request.send();
   };
 
