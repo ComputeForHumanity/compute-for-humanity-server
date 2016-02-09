@@ -1,30 +1,35 @@
 class APIController < ApplicationController
-  APP_VERSION = "1.15"
-
   # Seconds before heartbeat ping is expired. This is double the frequency with
   # which clients should roughly be sending heartbeats, to account for any
   # connectivity issues.
   USER_HEARTBEAT_TTL = 360
 
+  VOTES_KEY = "votes" # Redis key for votes hash.
+
   # Set the number of active miners for use in views.
   before_action :set_n_miners, only: [:users]
 
-  # Handle a miner's heartbeat by adding its key to the cache, and rendering the
-  # total amount donated in response.
+  # Handle a miner's heartbeat by adding its key to the cache, checking the
+  # n_recruits data, and and rendering the total amount donated and current
+  # n_recruits data in response.
   def heartbeat
-    uuid = params[:id]
+    output = { donated: Banker.total_donated_s }
+
+    uuid = params[:uuid]
     if uuid
       $redis.with do |connection|
         connection.set(heartbeat_key(uuid), true, ex: USER_HEARTBEAT_TTL)
       end
+
+      output.merge!("nRecruits" => Recruit.n_recruits(uuid: uuid))
     end
 
-    render text: Banker.total_donated_s, content_type: Mime::TEXT
+    render json: output, content_type: Mime::JSON
   end
 
   # Handle a miner's un-heartbeat by removing the key from the cache.
   def unheartbeat
-    uuid = params[:id]
+    uuid = params[:uuid]
     if uuid
       $redis.with { |connection| connection.del(heartbeat_key(uuid)) }
     end
@@ -32,6 +37,21 @@ class APIController < ApplicationController
     head :ok
   end
 
+  # Count a user's vote (heart donation) for a particular charity.
+  def vote
+    charity = params[:charity]
+    votes = params[:votes].to_i
+    if charity.present? &&
+       Charity::LIST.map(&:id).include?(charity) &&
+       votes > 0
+      # Increment votes for charity.
+      $redis.with { |connection| connection.hincrby(VOTES_KEY, charity, votes) }
+    end
+
+    head :ok
+  end
+
+  # Serve the number of users who are currently running Compute for Humanity.
   def users
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, "\
                                         "must-revalidate"
@@ -39,10 +59,6 @@ class APIController < ApplicationController
     response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
 
     render text: @n_miners, content_type: Mime::TEXT
-  end
-
-  def version
-    render text: APP_VERSION, content_type: Mime::TEXT
   end
 
   private

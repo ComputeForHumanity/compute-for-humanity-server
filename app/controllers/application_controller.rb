@@ -5,7 +5,13 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def default_url_options
+    options = {}
+    options[:r] = params[:r] if params[:r].present?
+    options.merge(super)
+  end
+
   def set_n_miners
-    @n_miners = $redis.with(&:dbsize)
+    @n_miners = $redis.with(&:dbsize) - 1 # Subtract one for votes hash.
   end
 end
