@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # If we're in production, redirect non-www to www subdomains.
+  before_action do
+    if Rails.env.production? && request.host[0..3] != "www."
+      redirect_to "https://www.computeforhumanity.org#{request.fullpath}",
+                  status: 301
+    end
+  end
+
   private
 
   def default_url_options
