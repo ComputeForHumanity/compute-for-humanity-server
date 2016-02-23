@@ -3,7 +3,7 @@
 # to yield better transparency into where the money may go.
 
 class Charity < Struct.new(:name, :id, :dwolla_id, :url)
-  DWOLLA_REFLECTOR_ID = "812-713-9234" # For testing (returns to sender).
+  DWOLLA_REFLECTOR_ID = "812-713-9234".freeze # For testing (returns to sender).
 
   # Override the initializer to set the Dwolla ID to be the test reflector ID
   # unless we're in a production environment.
@@ -41,8 +41,8 @@ class Charity < Struct.new(:name, :id, :dwolla_id, :url)
       dwolla_id: "812-527-4594",
       url: "https://pencilsofpromise.org/"
     )
-  ]
+  ].freeze
 
   # A mapping of charity name to Charity object.
-  MAP = LIST.index_by(&:name)
+  MAP = LIST.index_by(&:name).freeze
 end
