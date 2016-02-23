@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/api/v1/heartbeat" => "api#heartbeat"
   get "/api/v1/unheartbeat" => "api#unheartbeat"
   get "/api/v1/vote" => "api#vote"
+  get "/api/v1/votes" => "api#votes"
 end

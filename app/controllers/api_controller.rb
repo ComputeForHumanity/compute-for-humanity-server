@@ -4,7 +4,7 @@ class APIController < ApplicationController
   # connectivity issues.
   USER_HEARTBEAT_TTL = 360
 
-  VOTES_KEY = "votes" # Redis key for votes hash.
+  VOTES_KEY = "votes".freeze # Redis key for votes hash.
 
   # Set the number of active miners for use in views.
   before_action :set_n_miners, only: [:users]
@@ -21,7 +21,7 @@ class APIController < ApplicationController
         connection.set(heartbeat_key(uuid), true, ex: USER_HEARTBEAT_TTL)
       end
 
-      output.merge!("nRecruits" => Recruit.n_recruits(uuid: uuid))
+      output["nRecruits"] = Recruit.n_recruits(uuid: uuid)
     end
 
     render json: output, content_type: Mime::JSON
@@ -49,6 +49,11 @@ class APIController < ApplicationController
     end
 
     head :ok
+  end
+
+  # Render the number of votes for each charity.
+  def votes
+    render json: $redis.with { |connection| connection.hgetall(VOTES_KEY) }
   end
 
   # Serve the number of users who are currently running Compute for Humanity.
