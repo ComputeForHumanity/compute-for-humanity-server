@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get "/api/v1/unheartbeat" => "api#unheartbeat"
   get "/api/v1/vote" => "api#vote"
   get "/api/v1/votes" => "api#votes"
+
+  post "/api/v1/recruit" => "api#recruit"
 end

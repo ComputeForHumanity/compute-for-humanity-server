@@ -1,0 +1,9 @@
+Hey there!
+
+Someone's invited you to try out Compute for Humanity, a program that uses your computer to raise money for great charities—all at no cost to you!
+
+<%- if @referral.present? %>
+  Give it a spin with this special referral link: https://www.computeforhumanity.org/?r=<%= @referral %>
+<%- else %>
+  Give it a spin at https://www.computeforhumanity.org
+<%- end %>

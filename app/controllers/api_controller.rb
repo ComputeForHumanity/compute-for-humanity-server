@@ -6,6 +6,9 @@ class APIController < ApplicationController
 
   VOTES_KEY = "votes".freeze # Redis key for votes hash.
 
+  # The recruit action is a POST request but we won't have a CSRF token.
+  skip_before_action :verify_authenticity_token, only: [:recruit]
+
   # Set the number of active miners for use in views.
   before_action :set_n_miners, only: [:users]
 
@@ -64,6 +67,16 @@ class APIController < ApplicationController
     response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
 
     render text: @n_miners, content_type: Mime::TEXT
+  end
+
+  def recruit
+    if params[:uuid].present? && params[:email].present?
+      RecruitingMailer.
+        invite(address: params[:email], referral: params[:uuid]).
+        deliver_now
+    end
+
+    head :ok
   end
 
   private
