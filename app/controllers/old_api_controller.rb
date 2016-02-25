@@ -1,5 +1,5 @@
 class OldAPIController < ApplicationController
-  APP_VERSION = "1.15".freeze
+  APP_VERSION = "2.0".freeze
 
   # Seconds before heartbeat ping is expired. This is double the frequency with
   # which clients should roughly be sending heartbeats, to account for any

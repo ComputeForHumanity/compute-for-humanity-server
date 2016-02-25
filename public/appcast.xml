@@ -7,13 +7,13 @@
     <language>en</language>
 
     <item>
-      <title>Version 1.15</title>
+      <title>Version 2.0</title>
       <sparkle:releaseNotesLink>
-          http://computeforhumanity.org/release-notes?version=1.15
+          http://computeforhumanity.org/release-notes?version=2.0
       </sparkle:releaseNotesLink>
-      <pubDate>Tue, 27 Oct 2015</pubDate>
+      <pubDate>Wed, 24 Feb 2016</pubDate>
       <enclosure url="http://computeforhumanity.org/_download"
-        sparkle:version="1.15" length="2897814" type="application/octet-stream" />
+        sparkle:version="2.0" length="3290770" type="application/octet-stream" />
       <sparkle:minimumSystemVersion>10.10.3</sparkle:minimumSystemVersion>
     </item>
   </channel>
