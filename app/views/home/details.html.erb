@@ -54,7 +54,7 @@
         it automatically sends that money (with
         <span class="underlined">zero</span> transaction fees, using
         <a href="https://www.dwolla.com/" target="_blank">Dwolla</a>)
-        to a charity randomly selected from the following list:
+        to the following charities:
         <ul>
           <%- Charity::LIST.each do |charity| %>
             <li><a href="<%= charity.url %>" target="_blank"><%= charity.name %></a></li>
@@ -62,9 +62,9 @@
         </ul>
       </p>
       <p>
-        These charities were chosen primarily because they use Dwolla, but plans
-        to both support more charities and allow you to choose which charities
-        your computer supports are in the works!
+        <span class="underlined"><strong>You choose</strong></span> which
+        charities your computer supports. (If you'd like to see a charity added
+        to this list, get in touch!)
       </p>
       <p class="tiny-text">
         Note: If you already mine cryptocurrencies on your own, feel free to direct
@@ -82,8 +82,10 @@
   </div>
   <div class="description-container">
     <div class="description">
-      Questions are totally welcome! Just shoot an email to
-      <a href="mailto:jacob@computeforhumanity.org">jacob@computeforhumanity.org</a>.
+      Questions and comments are totally welcome!
+      <a href="https://twitter.com/Jake_Evelyn" target="_blank">@Jake_Evelyn</a>
+      /
+      <a href="mailto:jacob@computeforhumanity.org">jacob@computeforhumanity.org</a>
     </div>
   </div>
 </div>
