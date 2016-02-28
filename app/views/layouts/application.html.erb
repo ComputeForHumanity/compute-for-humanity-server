@@ -39,6 +39,7 @@
         <div class="logo">H</div>umanity
       </span>
     <% end %>
+    <%= link_to "Home", :root, class: "button navbar-link" %>
     <%= link_to "Blog", :blog, class: "button navbar-link" %>
     <% unless controller_name == "blog" %>
       <div class="counter-container">
