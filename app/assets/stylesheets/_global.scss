@@ -114,12 +114,15 @@ $table_body_height: 74px;
   margin-top: 100px;
 }
 
+.right {
+  float: right;
+}
+
 .big-button {
   width: 250px;
   height: 50px;
   line-height: 35px;
   font-size: 25px;
-  float: right;
   margin-top: 20px;
 }
 
@@ -167,16 +170,11 @@ $table_body_height: 74px;
   text-align: right;
 }
 
-.modal-button {
-  float: right;
-}
-
 .button {
   border-radius: 10px;
 }
 
 .home-button {
-  float: right;
   width: 150px;
   position: relative;
   top: -10px;
@@ -202,6 +200,15 @@ $table_body_height: 74px;
 
 .logo-container:hover > .logo {
   background-image: image-url("h-animated-3@128.gif");
+}
+
+.navbar-link {
+  background-color: #777;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 20px;
+  position: relative;
+  top: 12px;
 }
 
 .logo {
