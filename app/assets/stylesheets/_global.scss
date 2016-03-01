@@ -138,6 +138,11 @@ $table_body_height: 74px;
   width: 16px;
 }
 
+.inline-button {
+  margin-bottom: 0;
+  margin-top: -6px;
+}
+
 .download-button {
   font-size: 26px;
   margin-top: -15px;
@@ -299,6 +304,10 @@ $table_body_height: 74px;
       position: absolute;
       text-align: center;
       color: #000;
+    }
+
+    &.spaced-out {
+      margin-bottom: 15px;
     }
   }
 

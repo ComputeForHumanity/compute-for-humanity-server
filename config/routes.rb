@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/details" => "home#details"
   get "/financials" => "home#financials"
   get "/download" => "home#download"
+  get "/faq" => "home#faq"
   get "/release-notes" => "home#release_notes"
 
   get "/_download" => "download#download"
