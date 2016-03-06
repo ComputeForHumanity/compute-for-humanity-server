@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/api/v1/unheartbeat" => "api#unheartbeat"
   get "/api/v1/vote" => "api#vote"
   get "/api/v1/votes" => "api#votes"
+  get "/api/v1/recruits" => "api#recruits"
 
   get "/blog" => "blog#index"
   get "/blog/introducing-2.0" => "blog#1", as: :blog_1

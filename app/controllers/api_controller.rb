@@ -66,6 +66,11 @@ class APIController < ApplicationController
     render text: @n_miners, content_type: Mime::TEXT
   end
 
+  # Render the number of total recruits.
+  def recruits
+    render text: Recruit.sum(:n_recruits), content_type: Mime::TEXT
+  end
+
   private
 
   # @return [String] the Redis key for storing the heartbeat ping
