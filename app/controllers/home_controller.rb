@@ -1,12 +1,15 @@
 class HomeController < ApplicationController
   # Set the number of active miners for use in views.
   before_action :set_n_miners,
-                only: [:home, :faq, :details, :financials, :download]
+                only: [:home, :faq, :details, :financials, :privacy, :download]
 
   def home
   end
 
   def details
+  end
+
+  def privacy
   end
 
   def faq

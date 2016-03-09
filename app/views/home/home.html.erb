@@ -19,8 +19,18 @@
         <span class="highlight">You're helping the world!</span>
         No registration, no price tag, no hoops to jump through. (And no, it
         <%= link_to "won't", :details %> drive up your electricity bill.)
+        It's safe, unobtrusive, and fun!
         <%= link_to "Let's get started!", :download, class: "button big-button right warning" %>
       </p>
+    </div>
+  </div>
+</div>
+<div class="row top-margin-lg">
+  <div class="title fifth"></div>
+  <div class="description-container">
+    <div class="description centered">
+      As featured in
+      <%= image_tag "BetaBoston-logo.svg", class: "betaboston-logo" %>
     </div>
   </div>
 </div>
@@ -52,12 +62,38 @@
   </div>
 </div>
 <div class="row top-margin-lg">
-  <div class="title fifth">
+  <div class="title fifth"><h1>Screenshots</h1></div>
+  <div class="description-container">
+    <div class="description">
+      <div class="row">
+        <div class="half">
+          <%= image_tag "menu-screenshot.png", class: "centered-image" %>
+        </div>
+        <div class="half">
+          <%= image_tag "special-surprise-screenshot.png", class: "centered-image" %>
+          <p class="centered"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="half centered">
+          It's just a tiny icon at the top of your screen. Earn 💖s over time
+          and donate them to your favorite charities!
+        </div>
+        <div class="half centered">
+          Accomplish enough 🏆s and you can get a surprise in the mail. (Only
+          if you want it, of course. But why wouldn't you?)
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+<div class="row top-margin-lg">
+  <div class="title fifth"></div>
   <div class="description-container">
     <div class="description centered">
-      As featured in
-      <%= image_tag "BetaBoston-logo.svg", class: "betaboston-logo" %>
+      And it's even easy to uninstall if you don't like it. So try it out and
+      make the world a better place:
+      <%= link_to "Download", :download, class: "button warning" %>
     </div>
   </div>
 </div>

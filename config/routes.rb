@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "home#home"
   get "/details" => "home#details"
   get "/financials" => "home#financials"
+  get "/privacy" => "home#privacy"
   get "/download" => "home#download"
   get "/faq" => "home#faq"
   get "/release-notes" => "home#release_notes"

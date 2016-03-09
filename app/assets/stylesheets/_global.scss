@@ -98,6 +98,12 @@ $table_body_height: 74px;
   }
 }
 
+.centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 .subtitle {
   font-weight: bold;
   position: relative;
