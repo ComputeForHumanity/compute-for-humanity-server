@@ -1,4 +1,11 @@
 <div class="row top-margin">
+  <div class="title fifth"></div>
+  <div class="description-container centered">
+      As featured in
+      <%= image_tag "BetaBoston-logo.svg", class: "betaboston-logo" %>
+  </div>
+</div>
+<div class="row top-margin-lg">
   <div class="title fifth">
     <h1>What it is</h1>
   </div>
@@ -22,15 +29,6 @@
         It's safe, unobtrusive, and fun!
         <%= link_to "Let's get started!", :download, class: "button big-button right warning" %>
       </p>
-    </div>
-  </div>
-</div>
-<div class="row top-margin-lg">
-  <div class="title fifth"></div>
-  <div class="description-container">
-    <div class="description centered">
-      As featured in
-      <%= image_tag "BetaBoston-logo.svg", class: "betaboston-logo" %>
     </div>
   </div>
 </div>
@@ -62,7 +60,7 @@
   </div>
 </div>
 <div class="row top-margin-lg">
-  <div class="title fifth"><h1>Screenshots</h1></div>
+  <div class="title fifth"><h1>How it looks</h1></div>
   <div class="description-container">
     <div class="description">
       <div class="row">
@@ -77,23 +75,19 @@
       <div class="row">
         <div class="half centered">
           It's just a tiny icon at the top of your screen. Earn 💖s over time
-          and donate them to your favorite charities!
+          and donate them to support your favorite charities!
         </div>
         <div class="half centered">
           Accomplish enough 🏆s and you can get a surprise in the mail. (Only
-          if you want it, of course. But why wouldn't you?)
+          if you want to, of course. But why wouldn't you?)
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="row top-margin-lg">
-  <div class="title fifth"></div>
-  <div class="description-container">
-    <div class="description centered">
-      And it's even easy to uninstall if you don't like it. So try it out and
-      make the world a better place:
-      <%= link_to "Download", :download, class: "button warning" %>
+      <p class="centered">
+        <br>
+        And it's even easy to uninstall if you don't like it. So
+        <%= link_to "download", :download, class: "button warning" %> now and
+        make the world a better place!
+      </p>
     </div>
   </div>
 </div>
