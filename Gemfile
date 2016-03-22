@@ -14,6 +14,7 @@ gem "rails", "~> 4.2.5"
 gem "redis", "~> 3.2"
 gem "rollbar", "~> 1.5"
 gem "sass-rails", "~> 5.0"
+gem "turbolinks", "~> 2.5"
 gem "uglifier", ">= 1.3.0"
 
 group :production do

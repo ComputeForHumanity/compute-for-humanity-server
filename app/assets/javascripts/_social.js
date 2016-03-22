@@ -1,4 +1,4 @@
 // Show the social buttons once they've loaded.
-$(function() {
+$(document).on("page:change", function() {
   $(".social-div").show();
 });
