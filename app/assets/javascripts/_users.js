@@ -1,6 +1,6 @@
-(function() {
-  "use strict";
+"use strict";
 
+(function() {
   var updateUsers = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -16,11 +16,15 @@
         document.getElementById("user-count-units").textContent = userCountUnits;
       }
     };
-    request.open("GET", "./api/v1/users");
+    request.open("GET", "/api/v1/users");
     request.send();
   };
 
-  window.addEventListener("DOMContentLoaded", function() {
+  if (document.body) {
     setInterval(updateUsers, 5000);
-  });
+  } else {
+    window.addEventListener("DOMContentLoaded", function() {
+      setInterval(updateUsers, 5000);
+    });
+  }
 })();
