@@ -1,0 +1,98 @@
+<div class="row top-margin">
+  <div class="title fifth">
+    <h1>Mar 24, 2016</h1>
+  </div>
+  <div class="description-container">
+    <div class="description">
+      <h2>Performance Prattle I: The out-of-pocket developer</h2>
+      <div class="subtitle">Or: “Less ⏰ = 💰” <span class="label warning">TECH</span></div>
+      Developers know that performance matters. Large companies like
+      <a href="http://www.fastcompany.com/1825005/how-one-second-could-cost-amazon-16-billion-sales" target="_blank">Amazon</a>
+      and
+      <a href="http://conferences.oreilly.com/velocity/velocity2009/public/schedule/detail/8523" target="_blank">Google and Microsoft</a>
+      and <a href="http://www.slideshare.net/stoyan/dont-make-me-wait-or-building-highperformance-web-applications" target="_blank">Yahoo</a>
+      lose <span class="highlight">twelve zillion dollars</span> a year for each
+      millisecond of additional latency (approximately). And the rest of us
+      <a href="https://blog.kissmetrics.com/loading-time/" target="_blank">fare no better</a>.
+      <p>Okay, great. But there’s another side to the coin that gets a lot less
+        press: <strong><span class="underlined">costs</span></strong>.</p>
+      <h3>A made-up example</h3>
+      Let’s say we have a webserver (like
+      <a href="http://puma.io" target="_blank">Puma</a> in Rails Land), and
+      let’s say that our application requires so much memory that we can only
+      run one process (with one thread) per machine (unlikely, yes, but not
+      <i>completely</i> unrealistic in Rails Land—especially in a memory-limited
+      environment like Heroku). If:
+      <ul>
+        <li>our app responds to web requests in 10 seconds (because, you know,
+          Ruby), and</li>
+        <li>we have 100 starry-eyed users (🌟 wooo! 🌟) visiting our site at
+          the same time,</li>
+      </ul>
+      we need 100 servers just to prevent our users from
+      <a href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank">literally <span class="underlined">dying</span> of boredom</a>.
+      Yikes.
+      <p>If we can reduce our memory footprint enough to allow 10 server threads
+        (or processes,
+        <a href="http://unicorn.bogomips.org" target="_blank">depending on your preference</a>)
+        on each machine, suddenly we can handle that traffic with
+        <strong>⅒ the number of servers.</strong> And if we can reduce our response time to 1 second
+        per request then <strong>a single 💻</strong> can handle all of our
+        requests without any of our users meeting a tragic end.</p>
+      <h3>What this means</h3>
+      That example glosses over lots of details, but the heart of it is what’s
+      important. Repeat after me:
+      <ol class="pretty-list small">
+        <li>Faster responses =
+          <span class="highlight">fewer servers</span></li>
+        <li>Lower resource use per application instance =
+          more scalability per server =
+          <span class="highlight">fewer servers</span></li>
+        <li><span class="highlight">Fewer servers</span> =
+          more 💰 in your 👛</li>
+      </ol>
+      <p>There’s some <a href="https://www.nateberkopec.com/2015/07/29/scaling-ruby-apps-to-1000-rpm.html#dyno-counts-must-obey-little’s-law" target="_blank">real math</a>
+        people have done around this if you’re into that sort of thing.</p>
+      <h3>How this affects the out-of-pocket developer</h3>
+      Compute for Humanity is a <strong>💖 labor of love 💖</strong>. I donate
+      <strong>100%</strong> of the proceeds to charity and pay for
+      <span class="underlined">all costs out of my own pocket</span>. While
+      companies can sometimes get away with <i>“throw more servers at it,”</i>
+      I don’t want to waste my own money like that. And so we arrive at
+      🎺 <strong>The Thesis of This Blog Post</strong> 🎺:
+      <p>
+      <div class="card">
+        <header><p class="centered">Server performance* is
+          <span class="underlined">especially important</span> for the solo,
+          out-of-pocket developer because the solo, out-of-pocket developer
+          <span class="underlined">does not** have money to burn</span>.</p></header>
+        <footer class="card-footer">
+          <p>
+          * Later posts will get into what to do when server performance and
+          user experience come into conflict (gasp! 😱).</p>
+          <p>** If you <span class="underlined"><i>do</i></span> have money to
+            burn, take me out to dinner?</p>
+        </footer>
+      </div></p>
+      <p>In the
+      coming weeks I’ll be running lots of 🔬 experiments ⚗ to squeeze the most
+      out of the single Heroku hobby dyno<sup>1</sup> (and free tiers of
+      databases, caches, and many other services) powering this whole show, and
+      <strong>I’ll be blogging about it all.</strong>
+      <p>If you’re interested in performance, or Ruby web development, or
+        finding out <span class="underlined">just</span>.
+        <span class="underlined">how</span>.
+        <span class="underlined">far</span>. a developer can strech a dollar,
+        <a href="http://eepurl.com/bTrNnX" target="_blank" class="button">subscribe</a>
+        to join me for the ride!</p>
+      <p>And if you want to raise money for charities at
+        <span class="underlined">absolutely no cost to you</span> while making
+        this out-of-pocket developer happy,
+        <%= link_to "get the app!", :download, class: "button warning" %></p>
+      <hr>
+      <sup>1</sup> If you have experience switching from Heroku to the free tier
+      of another hosting provider (like OpenShift or Google), I’d love to chat!
+      😊
+    </div>
+  </div>
+</div>

@@ -28,9 +28,11 @@ group :development, :test do
   gem "scss_lint", require: false
 
   # Dev dependencies.
-  gem "byebug"
+  gem "byebug", require: false
+  gem "derailed", require: false
   gem "flamegraph"
   gem "rack-mini-profiler"
   gem "spring"
+  gem "stackprof"
   gem "web-console", "~> 2.0"
 end
