@@ -119,7 +119,7 @@ $table_body_height: 74px;
 }
 
 .top-margin-tiny {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .top-margin {
@@ -361,11 +361,22 @@ $table_body_height: 74px;
   }
 }
 
-.betaboston-logo {
-  height: 30px;
-  margin-left: 8px;
+.press-logo {
+  margin-left: 20px;
   position: relative;
   top: -3px;
+  vertical-align: middle;
+
+  &.betaboston-logo {
+    height: 30px;
+  }
+
+  &.tgdaily-logo {
+    height: 40px;
+  }
+}
+
+.middle-aligned {
   vertical-align: middle;
 }
 
