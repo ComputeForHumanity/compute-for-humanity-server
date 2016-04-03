@@ -98,6 +98,45 @@ $table_body_height: 74px;
   }
 }
 
+.italic {
+  font-style: italic;
+}
+
+.emoji {
+  font-weight: normal !important; // Bold emoji don't render in Chrome.
+}
+
+.quote-row {
+  .quote-container {
+    padding-right: 70px;
+
+    .quote {
+      font-family: "Georgia";
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .mark {
+      display: inline-block;
+      font-family: "Georgia";
+      font-weight: bold;
+      font-size: 40px;
+      margin-top: -15px;
+      position: relative;
+
+      &.left {
+        margin-right: 5px;
+      }
+    }
+
+    .attribution {
+      color: #999;
+      font-style: normal;
+      float: right;
+    }
+  }
+}
+
 .centered-image {
   display: block;
   margin: 0 auto;
@@ -301,10 +340,6 @@ $table_body_height: 74px;
 .tiny-text {
   font-size: 12px;
   line-height: 12px;
-}
-
-.medium-text {
-  font-size: 30px;
 }
 
 .pretty-list {

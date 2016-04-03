@@ -12,26 +12,45 @@
   </div>
   <div class="description-container">
     <div class="description">
-      Compute for Humanity is a small application that uses your computer's
-      spare processing power to <span class="highlight">raise money for
-      charity</span>. It's designed to be
-      <span class="highlight">highly energy-efficient</span> and
-      gentle to your computer. You won't even notice it's running!
-      <p>
-        It works by occasionally doing little bits of math to generate small
-        amounts of cryptocurrencies (similar to Bitcoin), which are then
-        exchanged for US dollars and donated to good causes.
-      </p>
-      <p>
-        Just install the program and voilà!
-        <span class="highlight">You're helping the world!</span>
-        No registration, no price tag, no hoops to jump through. (And no, it
-        <%= link_to "won't", :details %> drive up your electricity bill.)
-        It's safe, unobtrusive, and fun!
-        <%= link_to "Let's get started!", :download, class: "button big-button right warning" %>
-      </p>
+      <h1 class="centered">Save the world from your sofa.</h3>
+      <div class="row">
+        <div class="half">
+          <h4 class="centered highlight">Your computer generates <span class="emoji">💰</span></h4>
+          <ul>
+            <li>Compute for Humanity uses your computer's spare processing power
+              to do little bits of math
+              that earn it fractions of pennies.</li>
+            <li>It's unobtrusive and
+              <strong><span class="italic">super efficient</span></strong>—you
+              won't even notice it's running!</li>
+            <li>It <strong><%= link_to "won't impact", :details %></strong> your
+              computer's performance or battery life or your electricity bill.</li>
+          </ol>
+        </div>
+        <div class="half">
+          <h4 class="centered highlight">The <span class="emoji">💰</span> goes to charity</h4>
+          <ul>
+            <li>Just select which charity you want your computer to support.</li>
+            <li>100% of the money goes to charity.
+              <strong>We pocket <span class="underlined">none</span>.</strong></li>
+            <li>Recruit friends to earn the
+              <strong><%= link_to "special surprise", "#screenshots" %></strong>!</li>
+          </ol>
+          <%= link_to "Get it now!", :download, class: "button big-button right warning" %>
+        </div>
+      </div>
+      <div class="centered"><span class="underlined">No</span> price tag.
+        <span class="underlined">No</span> registration.
+        <span class="underlined">No</span> tricky installation process.
+        <span class="underlined">No</span> hoops to jump through.</div>
     </div>
   </div>
+</div>
+<div class="row top-margin-tiny quote-row">
+  <div class="fifth"></div>
+  <div class="centered quote-container"><span class="mark left">“</span><span class="quote italic">Maybe the
+    easiest way to help the world, it costs nothing, and it’s pretty fun to
+    boot.</span><span class="mark">”</span> <span class="attribution">—TG Daily Staff</span></div>
 </div>
 <div class="row top-margin-lg">
   <div class="title fifth">
@@ -45,7 +64,7 @@
           <%= link_to "Learn more", :details, class: "button home-button right" %>
         </li>
         <li class="top-margin-lg">
-          100% of the money you raise is donated to charities.*
+          100% of the money you raise is donated to charities.
           <%= link_to "See financials", :financials, class: "button home-button right" %>
         </li>
         <li class="top-margin-lg">
@@ -53,13 +72,10 @@
           <a href="https://github.com/ComputeForHumanity" target="_blank" class="button home-button right">See the code</a>
         </li>
       </ol>
-      <div class="tiny-text top-margin-lg">* Except for transaction fees, which
-        we jump through hoops to keep to an
-        <span class="underlined">absolute</span>
-        <span class="underlined">minimum</span>.</div>
     </div>
   </div>
 </div>
+<a name="screenshots"></a>
 <div class="row top-margin-lg">
   <div class="title fifth"><h1>How it looks</h1></div>
   <div class="description-container">
@@ -85,8 +101,8 @@
       </div>
       <p class="centered">
         <br>
-        And it's even easy to uninstall if you don't like it. So
-        <%= link_to "download", :download, class: "button warning" %> now and
+        So what are you waiting for?
+        <%= link_to "Download", :download, class: "button warning" %> now and
         make the world a better place!
       </p>
     </div>
