@@ -1,0 +1,73 @@
+<div class="row top-margin">
+  <div class="title fifth">
+    <h1>Apr 3, 2016</h1>
+  </div>
+  <div class="description-container">
+    <div class="description">
+      <h2>Making a blog without making a blog</h2>
+      <div class="subtitle">Or: “A blog post about blog posts” <span class="label warning">TECH</span></div>
+      When I first set out to create this blog, my first thought was: “<span class="italic">What tools should I use?</span>”
+      <p>
+        I'd used <a href="https://wordpress.com" target="_blank">WordPress</a>
+        before, so that was an obvious choice. But I'm also a Ruby guy, so maybe
+        something like
+        <a href="http://octopress.org" target="_blank">Octopress</a> or
+        <a href="https://jekyllrb.com" target="_blank">Jekyll</a> would be good
+        too. But this site already uses Rails, so should I use
+        <a href="https://github.com/publify/publify" target="_blank">Publify</a>
+        instead? Or
+        <a href="https://github.com/jipiboily/monologue" target="_blank">Monologue</a>?
+        <a href="https://github.com/KatanaCode/blogit" target="_blank">blogit</a>?
+        <a href="https://buttercms.com" target="_blank">ButterCMS</a>?
+        <a href="https://github.com/salkar/inkwell" target="_blank">Inkwell</a>?
+        <a href="https://www.ruby-toolbox.com/search?utf8=✓&q=blog" target="_blank">Something else</a>?
+        Of course the only logical thing left to do was to spend
+        <span class="underlined italic">hours</span>
+        testing all of the options, creating mock databases and downloading
+        command-line tools and making feature comparison spreadsheets.
+      <p>
+      <p><strong>Or... <span class="underlined">not</span>.</strong></p>
+      <h3>A blog post is just text</h3>
+      A blog post is just a bunch of text on a page (and sometimes a 🙃 or
+      twelve). I already know how to make
+      text appear on a page in Rails, and I haven't needed fancy tools so far.
+      Sure, some blogging systems give you calendars and tags and fancy CMS
+      admin tools, but that's really just more to manage and doesn't give me
+      any benefit until there are enough posts to warrant more organization.
+      <h3>My homemade blog setup</h3>
+      So I made my own blogging system. I call it
+      <span class="highlight">🎀 The Non-Blog Blog™ 🎀</span>. Routes are just
+      whatever I want them to be:<br><br>
+      <script src="https://gist.github.com/JacobEvelyn/8f839f0c33d8b127528b6473695d2b95.js"></script>
+      And here's the controller, in all its minimalist glory:<br><br>
+      <script src="https://gist.github.com/JacobEvelyn/b68c2c7fdac6d8ddcee9e28174629ddc.js"></script>
+      And the posts themselves are just—<span class="italic">gasp</span>—normal
+      views. When I write new posts, I—<span class="italic">double gasp</span>—copy
+      and paste the teaser snippet onto the blog index page, which takes about
+      1.3 seconds if I'm really taking my time.
+      <p>
+        Sure, there are features I don't have. But this system also gives me
+        more freedom than some other options. (Just look at all the creative
+        formatting on <%= link_to "this page", :blog_2, target: "_blank" %> and
+        try doing that in WordPress.)
+      </p>
+      <h3>I'm not saying not to use tools</h3>
+      I haven't sworn off blogging tools. Maybe eventually I'll move to one of the
+      many options out there. But that feels like a decision to make when I have
+      20+ posts, not when I have three. So for now, I'm quite content with
+      <span class="highlight">🎀 The Non-Blog Blog™ 🎀</span>, thank you very
+      much.
+      <p>
+        <span class="italic">If you want to see me use</span>
+        <span class="highlight">🎀 The Non-Blog Blog™ 🎀</span>
+        <span class="italic">more,</span>
+        <a href="http://eepurl.com/bTrNnX" target="_blank" class="button">subscribe</a>
+        <span class="italic">to get new posts delivered right to your inbox.
+        And if you want to raise money for charities at
+        <strong>absolutely no cost to you</strong>,
+        <%= link_to "download", :download, class: "button warning" %>
+        Compute for Humanity now!</span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   get "/blog" => "blog#index"
   get "/blog/introducing-2.0" => "blog#1", as: :blog_1
   get "/blog/out-of-pocket-developer" => "blog#2", as: :blog_2
+  get "/blog/a-non-blog-blog" => "blog#3", as: :blog_3
 end
