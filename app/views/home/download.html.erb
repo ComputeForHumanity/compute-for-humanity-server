@@ -6,9 +6,7 @@
     <div class="description">
       <ol class="pretty-list large">
         <li>
-          <a href="_download<%= "?r=#{params[:r]}" if params[:r].present? %>" class="button success download-button">Download for OS X</a>
-          <span class="spaced-or">or</span>
-          <a href="http://eepurl.com/bBhx2T" target="_blank" class="button platform-newsletter-button">I don't have a Mac</a>
+          <%= link_to "Download", :blog_4, class: "button success download-button" %>
           <span class="tiny-text">
             <br>
             By downloading you agree to some standard
